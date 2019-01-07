@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Submission" content="/tmp/codecheck/18021624398819798500826096742"/>
+<meta name="Level" content="1"/>
+<meta name="Time" content="2018-02-16T00:39:19Z"/>
+<meta name="ID" content="Hilbert"/>
+<meta name="User" content="1801310608b6f1wjv9hvt95tlezt0umla91"/>
+<meta name="Problem" content="ext/18021006071yha0s7ifn2odnn9za9j206hz"/>
+<meta name="Elapsed" content="2495 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+.note {color: blue; font-weight: bold;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header run">Testing Hilbert.cpp</p>
+<div class="run">
+<p class="caption">Input:</p>
+<pre class="output">1
+3
+5
+0
+</pre>
+<pre class="output">Size of Hilbert matrix (1-5)?
+Hilbert matrix of size 1:
+
+1.000000      
+
+Hilbert matrix inverted:
+
+1.000000      
+
+Hilbert matrix multiplied by its inverse:
+
+1.000000      
+
+Inverse Hilbert matrix inverted:
+
+1.000000      
+
+Size of Hilbert matrix (1-5)?
+Hilbert matrix of size 3:
+
+1.000000      0.500000    0.333333  
+0.500000    0.333333  0.250000  
+0.333333  0.250000  0.200000  
+
+Hilbert matrix inverted:
+
+9.000000      -36.000000  30.000000      
+-36.000000  192.000000      -180.000000  
+30.000000      -180.000000  180.000000      
+
+Hilbert matrix multiplied by its inverse:
+
+1.000000      0.000000  0.000000  
+0.000000  1.000000  0.000000  
+0.000000  -0.000000  1.000000      
+
+Inverse Hilbert matrix inverted:
+
+1.000000      0.500000  0.333333  
+0.500000  0.333333  0.250000  
+0.333333  0.250000  0.200000  
+
+Size of Hilbert matrix (1-5)?
+Hilbert matrix of size 5:
+
+1.000000      0.500000    0.333333  0.250000  0.200000  
+0.500000    0.333333  0.250000  0.200000  0.166667  
+0.333333  0.250000  0.200000  0.166667  0.142857  
+0.250000  0.200000  0.166667  0.142857  0.125000  
+0.200000  0.166667  0.142857  0.125000  0.111111  
+
+Hilbert matrix inverted:
+
+25.000000      -300.000000  1050.000000      -1400.000000  630.000000      
+-300.000000  4800.000000      -18900.000000  26880.000000      -12600.000000  
+1050.000000      -18900.000000  79380.000000      -117600.000000  56700.000000      
+-1400.000000  26880.000000      -117600.000000  179200.000000      -88200.000000  
+630.000000      -12600.000000  56700.000000      -88200.000000  44100.000000      
+
+Hilbert matrix multiplied by its inverse:
+
+1.000000      0.000000  0.000000  0.000000  0.000000  
+0.000000  1.000000      0.000000  0.000000  -0.000000  
+0.000000  -0.000000  1.000000      0.000000  0.000000  
+0.000000  0.000000  0.000000  1.000000      -0.000000  
+0.000000  -0.000000  0.000000  0.000000  1.000000  
+
+Inverse Hilbert matrix inverted:
+
+1.000000  0.500000  0.333333  0.250000  0.200000  
+0.500000  0.333333  0.250000  0.200000  0.166667  
+0.333333  0.250000  0.200000  0.166667  0.142857  
+0.250000  0.200000  0.166667  0.142857  0.125000  
+0.200000  0.166667  0.142857  0.125000  0.111111  
+
+Size of Hilbert matrix (1-5)?
+Done!
+</pre>
+<span class="pass">pass </span></div>
+<p class="header studentFiles">Student files</p>
+<div class="studentFiles">
+<p class="caption">Hilbert.cpp:</p>
+<pre>/***** Complete this program. *****/
+#include &lt;iomanip&gt;
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+using std::showpoint;
+
+
+const int MAX_SIZE = 5;  // maximum matrix size
+
+// Error codes for singular matrices, which cannot be inverted.
+enum ErrorCode {ZERO_ROW, SINGULAR_MATRIX, NO_CONVERGENCE};
+
+/**
+ * Invert a matrix using the LU Decomposition Algorithm.
+ * @param n the size of the matrix.
+ * @param A the matrix to invert.
+ * @param Ainv the computed inverse of A.
+ */
+void invert(const int n, double A[][MAX_SIZE], double Ainv[][MAX_SIZE]);
+
+/**
+ * Decompose matrix A by computing lower and upper triangular matrices
+ * L and U and permutation matrix P so that LU = PA. Store L-I and U in LU.
+ * A and LU can be passed the same matrix.
+ * @param n the size of the matrices.
+ * @param A the matrix to decompose.
+ * @param LU the computed decomposition such that LU = PA.
+ * @param ps the computed permuted row indices.
+ */
+void decompose(const int n, double A[][MAX_SIZE],
+               double LU[][MAX_SIZE], int ps[MAX_SIZE]);
+
+/**
+ * Solve Ax = b using LU from function decompose.
+ * @param n the size of the matrices and vectors.
+ * @param A the coefficient matrix.
+ * @param x the computed solution vector.
+ * @param b the right-hand-side vector.
+ * @param ps the permuted row indices.
+ */
+void solve(const int n, double LU[][MAX_SIZE],
+           const double b[], double x[], const int ps[MAX_SIZE]);
+
+/**
+ * Indicate a singular matrix.
+ * @param code the error code.
+ */
+void singular(const ErrorCode code);
+
+/**
+ * The main.
+ * Repeatedly prompt the user for the size of the Hilbert matrix
+ * and then perform the computations.
+ */
+
+//Function to compute product of two matrix
+void mult( int size_matrix,double hil_mat[][MAX_SIZE],double inv_hil_mat[][MAX_SIZE]) {
+	double result[MAX_SIZE][MAX_SIZE];
+	for(int i=0; i&lt;size_matrix; i++) {
+		for(int j=0; j&lt;size_matrix; j++) {
+			for(int k=0; k&lt;size_matrix; k++) {
+				result[i][j]+=hil_mat[i][k]*inv_hil_mat[k][j];
+			}
+		}
+	}
+
+	cout&lt;&lt;endl;
+	cout&lt;&lt;endl;
+	cout&lt;&lt;"Hilbert matrix multiplied by its inverse:"&lt;&lt;endl;
+	for(int i=0; i&lt;size_matrix; i++) {
+		cout&lt;&lt;endl;
+		for(int j=0; j&lt;size_matrix; j++) {
+			if(result[i][j]&gt;=1) {
+				cout&lt;&lt;fixed;
+				cout&lt;&lt;setprecision(6);
+				cout&lt;&lt;result[i][j]&lt;&lt;"      ";
+			}
+			if(result[i][j]&lt;1 &amp;&amp; result[i][j]!=0.5) {
+				cout&lt;&lt;fixed;
+				cout&lt;&lt;setprecision(6);
+				cout&lt;&lt;result[i][j]&lt;&lt;"  ";
+			}
+
+			if(result[i][j]==0.5) {
+				cout&lt;&lt;fixed;
+				cout&lt;&lt;setprecision(6);
+				cout&lt;&lt;result[i][j]&lt;&lt;"    ";
+			}
+
+		}
+	}
+}
+int main() {
+	int size_matrix=0;
+	//Asking for User Input until Invalid Input is entered
+	do {
+		cout&lt;&lt;"Size of Hilbert matrix (1-5)?"&lt;&lt;endl;
+		cin&gt;&gt;size_matrix;
+		//Checks if valid input is entered
+		if(size_matrix!=0) {
+
+			// Calculating Hilbert Matrix
+			double hil_mat[MAX_SIZE][MAX_SIZE];
+			for(int i=1; i&lt;=size_matrix; i++) {
+				for(int j=1; j&lt;=size_matrix; j++) {
+					hil_mat[i-1][j-1]=1.0/(i+j-1);
+				}
+			}
+			//Printing Hilbert Matrix
+			cout&lt;&lt;"Hilbert matrix of size "&lt;&lt;size_matrix&lt;&lt;":"&lt;&lt;endl;
+			for(int i=0; i&lt;size_matrix; i++) {
+				cout&lt;&lt;endl;
+				for(int j=0; j&lt;size_matrix; j++) {
+					if(hil_mat[i][j]&gt;=1) {
+						cout&lt;&lt;fixed;
+						cout&lt;&lt;setprecision(6);
+						cout&lt;&lt;hil_mat[i][j]&lt;&lt;"      ";
+					}
+					if(hil_mat[i][j]&lt;1 &amp;&amp; hil_mat[i][j]!=0.5) {
+						cout&lt;&lt;fixed;
+						cout&lt;&lt;setprecision(6);
+						cout&lt;&lt;hil_mat[i][j]&lt;&lt;"  ";
+					}
+
+					if(hil_mat[i][j]==0.5) {
+						cout&lt;&lt;fixed;
+						cout&lt;&lt;setprecision(6);
+						cout&lt;&lt;hil_mat[i][j]&lt;&lt;"    ";
+					}
+
+				}
+			}
+
+			cout&lt;&lt;endl;
+			cout&lt;&lt;endl;
+
+			//Computing Inverse of Hilbert Matrix
+			double inv_hil_mat[MAX_SIZE][MAX_SIZE];
+			invert(size_matrix,hil_mat,inv_hil_mat);
+			//Printing Inverted Hilbert Matrix
+			cout&lt;&lt;"Hilbert matrix inverted:"&lt;&lt;endl;
+			for(int i=0; i&lt;size_matrix; i++) {
+				cout&lt;&lt;endl;
+				for(int j=0; j&lt;size_matrix; j++) {
+					if(inv_hil_mat[i][j]&gt;=1) {
+						cout&lt;&lt;showpoint;
+						cout&lt;&lt;inv_hil_mat[i][j]&lt;&lt;"      ";
+					}
+					if(inv_hil_mat[i][j]&lt;1 &amp;&amp; inv_hil_mat[i][j]!=0.5) {
+						cout&lt;&lt;showpoint;
+						cout&lt;&lt;inv_hil_mat[i][j]&lt;&lt;"  ";
+					}
+
+					if(inv_hil_mat[i][j]==0.5) {
+						cout&lt;&lt;showpoint;
+						cout&lt;&lt;inv_hil_mat[i][j]&lt;&lt;"    ";
+					}
+
+				}
+			}
+			//Multiplying Hilbert Matrix by its Inverse by calling Function
+
+
+			mult(size_matrix,hil_mat,inv_hil_mat);
+
+			//Computing Inverse of Invereted Hilbert Matrix
+			double inv_result [MAX_SIZE][MAX_SIZE];
+			invert(size_matrix,inv_hil_mat,inv_result);
+			cout&lt;&lt;endl;
+			cout&lt;&lt;endl;
+			cout&lt;&lt;"Inverse Hilbert matrix inverted:"&lt;&lt;endl;
+			// cout&lt;&lt;endl;
+			for(int i=0; i&lt;size_matrix; i++) {
+				cout&lt;&lt;endl;
+				for(int j=0; j&lt;size_matrix; j++) {
+					if(inv_result[i][j]&gt;=1) {
+						cout&lt;&lt;fixed;
+						cout&lt;&lt;setprecision(6);
+						cout&lt;&lt;inv_result[i][j]&lt;&lt;"      ";
+					}
+					if(inv_result[i][j]&lt;1 &amp;&amp; inv_result[i][j]!=0.5) {
+						cout&lt;&lt;fixed;
+						cout&lt;&lt;setprecision(6);
+						cout&lt;&lt;inv_result[i][j]&lt;&lt;"  ";
+					}
+
+					if(inv_result[i][j]==0.5) {
+						cout&lt;&lt;fixed;
+						cout&lt;&lt;setprecision(6);
+						cout&lt;&lt;inv_result[i][j]&lt;&lt;"    ";
+					}
+
+				}
+			}
+
+
+
+			cout&lt;&lt;endl;
+			cout&lt;&lt;endl;
+		}
+
+		else
+			break;
+
+	} while(size_matrix&gt;=1 &amp;&amp; size_matrix&lt;=5);
+
+	cout&lt;&lt;"Done!" &lt;&lt; endl;
+	return 0;
+}
+
+
+void invert(const int n, double A[][MAX_SIZE], double Ainv[][MAX_SIZE]) {
+	double LU[MAX_SIZE][MAX_SIZE];
+	double x[MAX_SIZE];  // solution vector
+	double b[MAX_SIZE];  // right-hand-side vector
+	int ps[MAX_SIZE];    // permuted row indices
+
+	decompose(n, A, LU, ps);
+
+	for (int j = 0; j &lt; n; j++) {
+		for (int i = 0; i &lt; n; i++) {
+			b[i] = i == j ? 1 : 0;
+		}
+
+		solve(n, LU, b, x, ps);
+		for (int i = 0; i &lt; n; i++) Ainv[i][j] = x[i];
+	}
+}
+
+void decompose(const int n, double A[][MAX_SIZE],
+               double LU[][MAX_SIZE], int ps[MAX_SIZE]) {
+	double scales[MAX_SIZE];  // vector of scaling factors
+	int pivot_index;
+	double norm_row, pivot, size, biggest, mult;
+
+	// Initialize ps, LU, and scales.
+	for (int i = 0; i &lt; n; i++) {
+		ps[i] = i;
+		norm_row = 0;
+
+		for (int j = 0; j &lt; n; j++) {
+			LU[i][j] = A[i][j];
+
+			// Find the largest row element.
+			if (norm_row &lt; abs(LU[i][j])) norm_row = abs(LU[i][j]);
+		}
+
+		// Set the scaling factor for row equilibration.
+		if (norm_row != 0) scales[i] = 1/norm_row;
+		else {
+			scales[i] = 0;
+			singular(ZERO_ROW);
+		}
+	}
+
+	// Gaussian elimination with partial pivoting.
+	for (int k = 0; k &lt; n-1; k++) {
+		pivot_index = -1;
+		biggest = 0;
+
+		// Go down rows from row k.
+		for (int i = k; i &lt; n; i++) {
+			// Divide by the largest row element.
+			size = abs(LU[ps[i]][k])*scales[ps[i]];
+
+			if (biggest &lt; size) {
+				biggest     = size;  // biggest scales column element
+				pivot_index = i;     // row index of this element
+			}
+		}
+
+		if (biggest == 0) singular(SINGULAR_MATRIX);
+		else {
+			if (pivot_index != k) {
+				// Exchange rows.
+				int j = ps[k];
+				ps[k] = ps[pivot_index];
+				ps[pivot_index] = j;
+			}
+
+			pivot = LU[ps[k]][k];  // pivot element
+
+			// Go down rest of rows.
+			for (int i = k+1; i &lt; n; i++) {
+				mult = LU[ps[i]][k]/pivot;
+				LU[ps[i]][k] = mult;
+
+				if (mult != 0) {
+					// Inner loop.
+					for (int j = k+1; j &lt; n; j++) {
+						// Only the column subscript varies.
+						LU[ps[i]][j] -= mult*LU[ps[k]][j];
+					}
+				}
+			}
+		}
+	}
+
+	// Check the bottom right element of the permuted matrix.
+	if (LU[ps[n-1]][n-1] == 0) singular(SINGULAR_MATRIX);
+}
+
+void solve(const int n, double LU[][MAX_SIZE],
+           const double b[], double x[], const int ps[MAX_SIZE]) {
+	double dot;  // dot product
+
+	// Ly = b : solve for y.
+	for (int i = 0; i &lt; n; i++) {
+		dot = 0;
+		for (int j = 0; j &lt;= i-1; j++) dot += LU[ps[i]][j]*x[j];
+		x[i] = b[ps[i]] - dot;
+	}
+
+	// Ux = y : solve for x.
+	for (int i = n-1; i &gt;= 0; i--) {
+		dot = 0;
+		for (int j = i+1; j &lt; n; j++) dot += LU[ps[i]][j]*x[j];
+		x[i] = (x[i] - dot)/LU[ps[i]][i];
+	}
+}
+
+void singular(const ErrorCode code) {
+	switch (code) {
+		case ZERO_ROW:
+			cout &lt;&lt; "Matrix with zero row in decompose." &lt;&lt; endl;
+			break;
+		case SINGULAR_MATRIX:
+			cout &lt;&lt; "Singular matrix in decompose." &lt;&lt; endl;
+			break;
+		case NO_CONVERGENCE:
+			cout &lt;&lt; "No convergence in improve" &lt;&lt; endl;
+			break;
+	}
+}
+</pre>
+</div>
+<p class="header score">Score</p>
+<div class="score">
+<p class="score">1/1</p>
+</div>
+<div class="footnotes"><div class="footnote">2018-02-16T00:39:19Z</div>
+</div>
+</body></html>

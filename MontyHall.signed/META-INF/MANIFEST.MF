@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Created-By: 1.8.0_151 (Oracle Corporation)
+
+Name: codecheck.log
+SHA-256-Digest: OxMgfiVn27oRdCIiP34hIFmbUCyBZjPPPN0ID7C2EtU=
+
+Name: report.html
+SHA-256-Digest: eTDvjdjnMr6Q4VcIVerKswzmP76GvEQrUYJMef/+7Sg=
+
+Name: MontyHall.cpp
+SHA-256-Digest: TG4GWhi5USoh5hoabXrmKl5JVQ45mKT94MYmCJijVAo=
+
+Name: codecheck.out
+SHA-256-Digest: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+

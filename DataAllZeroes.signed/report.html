@@ -1,0 +1,2191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Submission" content="/tmp/codecheck/18042724536373708087353627723"/>
+<meta name="Time" content="2018-04-27T00:53:43Z"/>
+<meta name="ID" content="DataAllZeroes"/>
+<meta name="User" content="1802180320715ac3brrhmwrycauydaa8jtx"/>
+<meta name="Problem" content="ext/1804210759ekdsstg2r6gow45mrpvvg1zxr"/>
+<meta name="Elapsed" content="26672 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+.note {color: blue; font-weight: bold;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<span class="fail">System Error:</span><pre class="output">Unknown pseudocomment SAMPLE in SortTests.cpp</pre>
+<p class="header run">Testing SortTests.cpp</p>
+<div class="run">
+<p class="caption">Error:</p>
+<pre class="output">/tmp/codecheck/18042724536373708087353627723/MergeSort.cpp: In member function ‘void MergeSort::merge(LinkedList&amp;, LinkedList&amp;, LinkedList&amp;)’:
+/tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:84:25: error: no match for ‘operator&lt;=’ (operand types are ‘Element’ and ‘Element’)
+          if (a-&gt;element &lt;= b-&gt;element) { //comparing the value of the elements
+                         ^
+In file included from /tmp/codecheck/18042724536373708087353627723/Sorter.h:7:0,
+                 from /tmp/codecheck/18042724536373708087353627723/ListSorter.h:5,
+                 from /tmp/codecheck/18042724536373708087353627723/MergeSort.h:6,
+                 from /tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:2:
+/usr/include/c++/5/chrono:508:7: note: candidate: template&lt;class _Rep1, class _Period1, class _Rep2, class _Period2&gt; constexpr bool std::chrono::operator&lt;=(const std::chrono::duration&lt;_Rep1, _Period1&gt;&amp;, const std::chrono::duration&lt;_Rep2, _Period2&gt;&amp;)
+       operator&lt;=(const duration&lt;_Rep1, _Period1&gt;&amp; __lhs,
+       ^
+/usr/include/c++/5/chrono:508:7: note:   template argument deduction/substitution failed:
+/tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:84:31: note:   ‘Element’ is not derived from ‘const std::chrono::duration&lt;_Rep1, _Period1&gt;’
+          if (a-&gt;element &lt;= b-&gt;element) { //comparing the value of the elements
+                               ^
+In file included from /tmp/codecheck/18042724536373708087353627723/Sorter.h:7:0,
+                 from /tmp/codecheck/18042724536373708087353627723/ListSorter.h:5,
+                 from /tmp/codecheck/18042724536373708087353627723/MergeSort.h:6,
+                 from /tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:2:
+/usr/include/c++/5/chrono:674:7: note: candidate: template&lt;class _Clock, class _Dur1, class _Dur2&gt; constexpr bool std::chrono::operator&lt;=(const std::chrono::time_point&lt;_Clock, _Duration1&gt;&amp;, const std::chrono::time_point&lt;_Clock, _Duration2&gt;&amp;)
+       operator&lt;=(const time_point&lt;_Clock, _Dur1&gt;&amp; __lhs,
+       ^
+/usr/include/c++/5/chrono:674:7: note:   template argument deduction/substitution failed:
+/tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:84:31: note:   ‘Element’ is not derived from ‘const std::chrono::time_point&lt;_Clock, _Duration1&gt;’
+          if (a-&gt;element &lt;= b-&gt;element) { //comparing the value of the elements
+                               ^
+In file included from /usr/include/c++/5/vector:64:0,
+                 from /tmp/codecheck/18042724536373708087353627723/Sorter.h:5,
+                 from /tmp/codecheck/18042724536373708087353627723/ListSorter.h:5,
+                 from /tmp/codecheck/18042724536373708087353627723/MergeSort.h:6,
+                 from /tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:2:
+/usr/include/c++/5/bits/stl_vector.h:1547:5: note: candidate: template&lt;class _Tp, class _Alloc&gt; bool std::operator&lt;=(const std::vector&lt;_Tp, _Alloc&gt;&amp;, const std::vector&lt;_Tp, _Alloc&gt;&amp;)
+     operator&lt;=(const vector&lt;_Tp, _Alloc&gt;&amp; __x, const vector&lt;_Tp, _Alloc&gt;&amp; __y)
+     ^
+/usr/include/c++/5/bits/stl_vector.h:1547:5: note:   template argument deduction/substitution failed:
+/tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:84:31: note:   ‘Element’ is not derived from ‘const std::vector&lt;_Tp, _Alloc&gt;’
+          if (a-&gt;element &lt;= b-&gt;element) { //comparing the value of the elements
+                               ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:1:
+/usr/include/c++/5/bits/basic_string.h:5085:5: note: candidate: template&lt;class _CharT, class _Traits, class _Alloc&gt; bool std::operator&lt;=(const _CharT*, const std::__cxx11::basic_string&lt;_CharT, _Traits, _Alloc&gt;&amp;)
+     operator&lt;=(const _CharT* __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:5085:5: note:   template argument deduction/substitution failed:
+/tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:84:31: note:   mismatched types ‘const _CharT*’ and ‘Element’
+          if (a-&gt;element &lt;= b-&gt;element) { //comparing the value of the elements
+                               ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:1:
+/usr/include/c++/5/bits/basic_string.h:5073:5: note: candidate: template&lt;class _CharT, class _Traits, class _Alloc&gt; bool std::operator&lt;=(const std::__cxx11::basic_string&lt;_CharT, _Traits, _Alloc&gt;&amp;, const _CharT*)
+     operator&lt;=(const basic_string&lt;_CharT, _Traits, _Alloc&gt;&amp; __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:5073:5: note:   template argument deduction/substitution failed:
+/tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:84:31: note:   ‘Element’ is not derived from ‘const std::__cxx11::basic_string&lt;_CharT, _Traits, _Alloc&gt;’
+          if (a-&gt;element &lt;= b-&gt;element) { //comparing the value of the elements
+                               ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:1:
+/usr/include/c++/5/bits/basic_string.h:5061:5: note: candidate: template&lt;class _CharT, class _Traits, class _Alloc&gt; bool std::operator&lt;=(const std::__cxx11::basic_string&lt;_CharT, _Traits, _Alloc&gt;&amp;, const std::__cxx11::basic_string&lt;_CharT, _Traits, _Alloc&gt;&amp;)
+     operator&lt;=(const basic_string&lt;_CharT, _Traits, _Alloc&gt;&amp; __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:5061:5: note:   template argument deduction/substitution failed:
+/tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:84:31: note:   ‘Element’ is not derived from ‘const std::__cxx11::basic_string&lt;_CharT, _Traits, _Alloc&gt;’
+          if (a-&gt;element &lt;= b-&gt;element) { //comparing the value of the elements
+                               ^
+In file included from /usr/include/c++/5/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5/bits/char_traits.h:39,
+                 from /usr/include/c++/5/string:40,
+                 from /tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:1:
+/usr/include/c++/5/bits/stl_iterator.h:1107:5: note: candidate: template&lt;class _Iterator&gt; bool std::operator&lt;=(const std::move_iterator&lt;_Iterator&gt;&amp;, const std::move_iterator&lt;_Iterator&gt;&amp;)
+     operator&lt;=(const move_iterator&lt;_Iterator&gt;&amp; __x,
+     ^
+/usr/include/c++/5/bits/stl_iterator.h:1107:5: note:   template argument deduction/substitution failed:
+/tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:84:31: note:   ‘Element’ is not derived from ‘const std::move_iterator&lt;_Iterator&gt;’
+          if (a-&gt;element &lt;= b-&gt;element) { //comparing the value of the elements
+                               ^
+In file included from /usr/include/c++/5/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5/bits/char_traits.h:39,
+                 from /usr/include/c++/5/string:40,
+                 from /tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:1:
+/usr/include/c++/5/bits/stl_iterator.h:1101:5: note: candidate: template&lt;class _IteratorL, class _IteratorR&gt; bool std::operator&lt;=(const std::move_iterator&lt;_Iterator&gt;&amp;, const std::move_iterator&lt;_IteratorR&gt;&amp;)
+     operator&lt;=(const move_iterator&lt;_IteratorL&gt;&amp; __x,
+     ^
+/usr/include/c++/5/bits/stl_iterator.h:1101:5: note:   template argument deduction/substitution failed:
+/tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:84:31: note:   ‘Element’ is not derived from ‘const std::move_iterator&lt;_Iterator&gt;’
+          if (a-&gt;element &lt;= b-&gt;element) { //comparing the value of the elements
+                               ^
+In file included from /usr/include/c++/5/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5/bits/char_traits.h:39,
+                 from /usr/include/c++/5/string:40,
+                 from /tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:1:
+/usr/include/c++/5/bits/stl_iterator.h:366:5: note: candidate: template&lt;class _IteratorL, class _IteratorR&gt; bool std::operator&lt;=(const std::reverse_iterator&lt;_Iterator&gt;&amp;, const std::reverse_iterator&lt;_IteratorR&gt;&amp;)
+     operator&lt;=(const reverse_iterator&lt;_IteratorL&gt;&amp; __x,
+     ^
+/usr/include/c++/5/bits/stl_iterator.h:366:5: note:   template argument deduction/substitution failed:
+/tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:84:31: note:   ‘Element’ is not derived from ‘const std::reverse_iterator&lt;_Iterator&gt;’
+          if (a-&gt;element &lt;= b-&gt;element) { //comparing the value of the elements
+                               ^
+In file included from /usr/include/c++/5/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5/bits/char_traits.h:39,
+                 from /usr/include/c++/5/string:40,
+                 from /tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:1:
+/usr/include/c++/5/bits/stl_iterator.h:316:5: note: candidate: template&lt;class _Iterator&gt; bool std::operator&lt;=(const std::reverse_iterator&lt;_Iterator&gt;&amp;, const std::reverse_iterator&lt;_Iterator&gt;&amp;)
+     operator&lt;=(const reverse_iterator&lt;_Iterator&gt;&amp; __x,
+     ^
+/usr/include/c++/5/bits/stl_iterator.h:316:5: note:   template argument deduction/substitution failed:
+/tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:84:31: note:   ‘Element’ is not derived from ‘const std::reverse_iterator&lt;_Iterator&gt;’
+          if (a-&gt;element &lt;= b-&gt;element) { //comparing the value of the elements
+                               ^
+In file included from /usr/include/c++/5/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/5/bits/char_traits.h:39,
+                 from /usr/include/c++/5/string:40,
+                 from /tmp/codecheck/18042724536373708087353627723/MergeSort.cpp:1:
+/usr/include/c++/5/bits/stl_pair.h:239:5: note: candidate: template&lt;class _T1, class _T2&gt; constexpr bool std::operator&lt;=(const std::pair&lt;_T1, _T2&gt;&amp;, const std::pair&lt;_T1, _T2&gt;&amp;)
+     operator&lt;=(const pair&lt;_T1, _T2&gt;&amp; __x, const pair&lt;_T1, _T2&gt;&amp; __y)
+     ^
+/usr/include/c++/5/bits/stl_pair.h:239:5: note:   template argument deduction/substitution failed:
+/tmp/codecheck/18042724536373708087353627
+...
+Remainder truncated
+</pre>
+</div>
+<p class="header studentFiles">Submitted files</p>
+<div class="studentFiles">
+<p class="caption">DataAllZeroes.cpp:</p>
+<pre>#include "DataAllZeros.h"
+
+DataAllZeros::DataAllZeros() : DataGenerator("All zeroes") {}
+
+DataAllZeros::~DataAllZeros(){
+   
+}
+
+/***** Complete this file. *****/
+
+void DataAllZeros::generate_data(vector&lt;Element&gt;&amp; data, const int size)
+{
+   for(int i=0;i&lt;size;i++)
+   {
+      data.push_back(0);
+   }
+}
+</pre>
+<p class="caption">DataGenerator.cpp:</p>
+<pre>#include &lt;string&gt;
+#include &lt;vector&gt;
+#include "DataGenerator.h"
+
+/***** Complete this file. *****/
+DataGenerator::DataGenerator(string name)
+{
+   name=name;
+}
+
+DataGenerator::~DataGenerator()
+{
+   
+}
+
+string DataGenerator::get_name()
+{
+   return name;
+}
+
+void DataGenerator::generate_data(vector&lt;Element&gt;&amp; data, const int size)
+{
+   
+}
+</pre>
+<p class="caption">DataRandom.cpp:</p>
+<pre>#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+#include "DataRandom.h"
+#include "Element.h"
+
+DataRandom::DataRandom() : DataGenerator("Unsorted random") {}
+
+DataRandom::~DataRandom()
+{
+   
+}
+
+/***** Complete this file. *****/
+
+void DataRandom::generate_data(vector&lt;Element&gt;&amp; data, const int size)
+{
+    srand (time(NULL));
+    long i=0;
+    for(int j=0;j&lt;size;j++)
+    {
+      i = rand();
+      data.push_back(i);
+    }
+}
+</pre>
+<p class="caption">DataReverseSorted.cpp:</p>
+<pre>#include "DataReverseSorted.h"
+
+DataReverseSorted::DataReverseSorted() : DataGenerator("Reverse sorted") {}
+
+/***** Complete this file. *****/
+
+DataReverseSorted::~DataReverseSorted()
+{
+   
+}
+
+void DataReverseSorted::generate_data(vector&lt;Element&gt;&amp; data, const int size)
+{
+   
+ Element temp;
+int i, j, min_idx;
+
+    // One by one move boundary of unsorted subarray
+    for (i = 0; i &lt; size-1; i++)
+    {
+        // Find the minimum element in unsorted array
+        min_idx = i;
+        for (j = i+1; j &lt; size; j++)
+          if (data[j] &gt; data[min_idx])
+            min_idx = j;
+
+        // Swap the found minimum element with the first element
+       
+        temp=data[min_idx];
+        data[min_idx]=data[i];
+        data[i]=temp;
+    }
+   
+}
+</pre>
+<p class="caption">DataSorted.cpp:</p>
+<pre>#include "DataSorted.h"
+
+DataSorted::DataSorted() : DataGenerator("Already sorted") {}
+
+DataSorted::~DataSorted()
+{
+   
+}
+
+/***** Complete this file. *****/
+void DataSorted::generate_data(vector&lt;Element&gt;&amp; data, const int size)
+{
+    Element temp;
+int i, j, min_idx;
+
+    // One by one move boundary of unsorted subarray
+    for (i = 0; i &lt; size-1; i++)
+    {
+        // Find the minimum element in unsorted array
+        min_idx = i;
+        for (j = i+1; j &lt; size; j++)
+          if (data[j] &lt; data[min_idx])
+            min_idx = j;
+
+        // Swap the found minimum element with the first element
+       
+        temp=data[min_idx];
+        data[min_idx]=data[i];
+        data[i]=temp;
+    }
+   
+}
+</pre>
+<p class="caption">Element.cpp:</p>
+<pre>#include &lt;iostream&gt;
+#include "Element.h"
+
+using namespace std;
+
+// Static member variables, which are global to the class.
+long Element::copy_count;
+long Element::destructor_count;
+
+Element::Element()         : value(0) {}
+Element::Element(long val) : value(val) {}
+Element::Element(const Element&amp; other)
+{
+
+   value=other.value;
+   copy_count++;
+   
+}
+
+Element::~Element()
+{
+   destructor_count++;
+}
+
+
+ long Element::get_copy_count()
+{
+   return copy_count; 
+}
+
+ long Element::get_destructor_count()
+{
+   return destructor_count; 
+}
+
+long Element::get_value() const
+{
+   return value;
+}
+
+ void Element::reset()
+{
+   copy_count=0;
+   destructor_count=0;
+}
+
+bool operator ==(const Element&amp; elmt1, const Element&amp; elmt2)
+{
+   return elmt1.value==elmt2.value;
+}
+
+bool operator &lt;(const Element&amp; elmt1, const Element&amp; elmt2)
+{
+   return elmt1.value&lt;elmt2.value;
+}
+
+bool operator &gt;(const Element&amp; elmt1, const Element&amp; elmt2)
+{
+  return elmt1.value&gt;elmt2.value; 
+}
+
+ostream&amp; operator &lt;&lt;(ostream&amp; outs, const Element&amp; elmt)
+{
+    outs&lt;&lt;elmt.value;
+    return outs;
+}
+/***** Complete this file. *****/
+</pre>
+<p class="caption">InsertionSort.cpp:</p>
+<pre>#include "InsertionSort.h"
+
+//reference https://www.geeksforgeeks.org/
+
+InsertionSort::InsertionSort() : VectorSorter("Insertion sort") {}
+
+/***** Complete this file. *****/
+
+InsertionSort::~InsertionSort()
+{
+   
+}
+
+void InsertionSort::run_sort_algorithm()
+{
+   for (int i = 1; i &lt; size; i++) {
+
+                                Element val = data[i];
+                                //move_count++;
+                                int j = i - 1;
+
+                                while (j &gt;= 0) {
+                                                
+
+                                               // compare_count++;
+                                                if (data[j] &gt; val) {
+                                                                data[j + 1] = data[j];
+                                                               // move_count++;
+                                                                j = j - 1;
+                                                } else
+                                                                break;
+
+                                } //end while
+
+                                data[j + 1] = val;
+
+                }
+
+}
+</pre>
+<p class="caption">LinkedList.cpp:</p>
+<pre>#include &lt;iostream&gt;
+#include "LinkedList.h"
+using namespace std;
+
+LinkedList::LinkedList() : head(nullptr), tail(nullptr), size(0) {};
+
+LinkedList::LinkedList(Node *head, Node *tail, const int size)
+{
+    this-&gt;head = head;
+    this-&gt;tail = tail;
+    this-&gt;tail-&gt;next = nullptr;
+
+    this-&gt;size = size;
+}
+
+LinkedList::~LinkedList() {}
+
+Node *LinkedList::get_head() const { return head; }
+Node *LinkedList::get_tail() const { return tail; }
+int   LinkedList::get_size() const { return size; }
+
+void LinkedList::set(Node *head, Node *tail, int size)
+{
+    this-&gt;head = head;
+    this-&gt;tail = tail;
+    this-&gt;tail-&gt;next = nullptr;
+    this-&gt;size = size;
+}
+
+Node *LinkedList::remove_head()
+{
+    if (head == nullptr) return nullptr;
+
+    Node *removed_head = head;
+    head = head-&gt;next;
+
+    // Is the list now empty?
+    if (head == nullptr) tail = nullptr;
+
+    size--;
+    return removed_head;
+}
+
+void LinkedList::add(const Element&amp; elmt)
+{
+    Node *node = new Node(elmt);
+    add(node);
+}
+
+void LinkedList::add(Node *node)
+{
+    // First node.
+    if (head == nullptr)
+    {
+        head = tail = node;
+    }
+
+    // Subsequent node.
+    else
+    {
+        tail-&gt;next = node;
+        tail = node;
+    }
+
+    node-&gt;next = nullptr;
+    size++;
+}
+
+void LinkedList::clear()
+{
+    // Repeatedly delete the head node until the list is empty.
+    while (head != nullptr)
+    {
+        Node *next = head-&gt;next;
+        delete head;
+        head = next;
+    }
+
+    tail = nullptr;
+    size = 0;
+}
+
+void LinkedList::reset()
+{
+    head = tail = nullptr;
+    size = 0;
+}
+
+void LinkedList::print() const
+{
+    for (Node *ptr = head; ptr != nullptr; ptr = ptr-&gt;next)
+    {
+        cout &lt;&lt; " " &lt;&lt; ptr-&gt;element.get_value();
+    }
+    cout &lt;&lt; endl;
+}
+
+void LinkedList::split(LinkedList&amp; list1, LinkedList&amp; list2)
+{
+    /***** Complete this function. *****/
+    
+    Node* first;
+	Node* second;
+	if(head == nullptr || head-&gt;next == nullptr)  //checking head position and head-&gt;next position
+	{
+	    list1.head = head;
+	    list2.head = nullptr;
+	}
+	else
+	{
+	    first = head;
+	    list1.head = first;
+	    second = head-&gt;next;
+	    if(second != nullptr)
+	    {
+	        second = second-&gt;next;
+	    }
+	    while(second != nullptr)
+	    {
+	        first = first-&gt;next;
+	        second = second-&gt;next;
+	        if(second != nullptr)
+	        {
+	            second = second-&gt;next;
+	        }
+	    }
+	    list2.head = first-&gt;next;
+	    first-&gt;next = nullptr;
+	}
+
+}
+
+void LinkedList::concatenate(LinkedList&amp; other_list)
+{
+    /***** Complete this function. *****/
+    
+    Node *ptr1, *ptr2;	//two node pointers
+
+	ptr1 = head;
+	ptr2 = other_list.head;
+
+	while (ptr1-&gt;next != nullptr)
+	{
+		ptr1 = ptr1-&gt;next;
+	}
+
+	ptr1-&gt;next = ptr2;
+
+}
+</pre>
+<p class="caption">MergeSort.cpp:</p>
+<pre>#include &lt;string&gt;
+#include "MergeSort.h"
+
+MergeSort::MergeSort() : ListSorter("Mergesort") {}
+
+MergeSort::~MergeSort() {}
+
+void MergeSort::run_sort_algorithm() throw(string)
+{
+    // Defensive programming: Make sure we end up
+    // with the same size list after sorting.
+    int size_before = data.get_size();
+
+    mergesort(data);
+
+    // Check sizes.
+    int size_after = data.get_size();
+    if (size_before != size_after)
+    {
+        string message = "***** Size mismatch: before " +
+                         to_string(size_before) + ", size after " +
+                         to_string(size_after);
+        throw message;
+    }
+}
+
+void MergeSort::mergesort(LinkedList&amp; list)
+{
+    /***** Complete this function. *****/
+      Node* head = list.get_head();
+	  LinkedList a;
+	  LinkedList b;
+
+	  /* Base case -- length 0 or 1 */
+	  if ((head == NULL) || (head-&gt;next == NULL))
+	  {
+	    return;
+	  }
+
+	  /* Split head into 'a' and 'b' sublists */
+	  list.split(a,b);
+
+	  /* Recursively sort the sublists */
+	  //mergesort(a);
+	  //mergesort(b);
+
+	  /* answer = merge the two sorted lists together */
+	  //merge(list,a, b);
+
+}
+
+void MergeSort::merge(LinkedList&amp; list,
+                      LinkedList&amp; sublist1, LinkedList&amp; sublist2)
+{
+    /***** Complete this function. *****/
+    
+    Node* a = sublist1.get_head();
+	Node* b = sublist2.get_head();
+	Node* temp;
+
+	if(a == nullptr){  //checking whether sublist1 is empty
+	    //compare_count++;
+	    Node* pt = sublist2.get_head();
+	    while(pt != nullptr){
+	      //  move_count++;
+	        pt = pt-&gt;next;
+	    }
+	    list.concatenate(sublist2); //appending sublist2
+	    return;
+	}
+	else if(b == nullptr){ //checking whether sublist2 is empty
+	    //compare_count++;
+	    Node* pt = sublist2.get_head();
+	    while(pt != nullptr){
+	        //move_count++;
+	        pt = pt-&gt;next;
+	    }
+	    list.concatenate(sublist1); //appending sublist1
+	    return;
+	}
+	else {
+	    while (a != nullptr &amp;&amp; b != nullptr) {  //iterating till any one list reaches to the end
+	        //compare_count++;
+	        if (a-&gt;element &lt;= b-&gt;element) { //comparing the value of the elements
+	            temp = a-&gt;next;
+	            //move_count++;
+	            list.add(sublist1.remove_head());  //adding to the list
+	            a = temp;
+	        } else {
+	            temp = b-&gt;next;
+	            //move_count++;
+	            list.add(sublist2.remove_head()); //adding to the list
+	            b = temp;
+	        }
+	    }
+	    merge(list,sublist1,sublist2);
+	}
+
+}
+
+void MergeSort::clear() { data.clear(); }
+</pre>
+<p class="caption">Node.cpp:</p>
+<pre>#include "Node.h"
+#include "Element.h"
+
+/***** Complete this file. *****/
+Node::Node(Element elmt):element(elmt)
+{
+   next=nullptr;
+}
+</pre>
+<p class="caption">QuickSortOptimal.cpp:</p>
+<pre>#include "QuickSortOptimal.h"
+
+https://www.geeksforgeeks.org/
+
+QuickSortOptimal::QuickSortOptimal() : QuickSorter("Quicksort optimal") {}
+QuickSortOptimal::~QuickSortOptimal()
+{}
+/***** Complete this file. *****/
+Element&amp; QuickSortOptimal::choose_pivot_strategy(const int left, const int right)
+{
+    /***** Complete this member function. *****/
+	int middle=(left+right)/2;
+		if((data[left].get_value()&lt;=data[middle].get_value() &amp;&amp; data[middle].get_value()&lt;=data[right].get_value()) || (data[right].get_value()&lt;=data[middle].get_value() &amp;&amp; data[middle].get_value()&lt;=data[left].get_value()))
+		{
+			//compare_count+=4;
+			swap(middle,left);
+		}
+		else if((data[left].get_value()&lt;=data[right].get_value() &amp;&amp; data[right].get_value()&lt;=data[middle].get_value()) || (data[middle].get_value()&lt;=data[right].get_value() &amp;&amp; data[right].get_value()&lt;=data[left].get_value())){
+			//compare_count+=4;
+			swap(right,left);
+		}
+
+
+		return data[left];
+}
+
+</pre>
+<p class="caption">QuickSortSuboptimal.cpp:</p>
+<pre>#include "QuickSortSuboptimal.h"
+
+QuickSortSuboptimal::QuickSortSuboptimal() : QuickSorter("Quicksort suboptimal") {}
+QuickSortSuboptimal::~QuickSortSuboptimal()
+{}
+/***** Complete this file. *****/
+
+</pre>
+<p class="caption">QuickSorter.cpp:</p>
+<pre>#include &lt;iostream&gt;
+#include "QuickSorter.h"
+using namespace std;
+
+QuickSorter::QuickSorter(string name) : VectorSorter(name) {}
+
+QuickSorter::~QuickSorter() {}
+
+void QuickSorter::run_sort_algorithm() throw (string)
+{
+    quicksort(0, size-1);
+}
+
+void QuickSorter::quicksort(const int left, const int right)
+{
+    // Continue the recursive calls until the indexes cross.
+    if (left &lt;= right)
+    {
+        // Choose the pivot and partition this subrange.
+        Element&amp; pivot = choose_pivot(left, right);
+        int p = partition(left, right, pivot);
+
+        quicksort(left, p-1);  // Sort elements &lt;  pivot
+        quicksort(p+1, right); // Sort elements &gt;= pivot
+    }
+}
+
+Element&amp; QuickSorter::choose_pivot(const int left, const int right)
+{
+    return choose_pivot_strategy(left, right);
+}
+
+int QuickSorter::partition(const int left, const int right, const Element&amp; pivot)
+{
+    /***** Complete this function. *****/
+}
+</pre>
+<p class="caption">ShellSortOptimal.cpp:</p>
+<pre>#include "ShellSortOptimal.h"
+
+https://www.geeksforgeeks.org/
+
+ShellSortOptimal::ShellSortOptimal() :VectorSorter("Shellsort optimal") {}
+
+/***** Complete this file. *****/
+ShellSortOptimal::~ShellSortOptimal()
+{}
+void ShellSortOptimal::run_sort_algorithm() {
+	/***** Complete this member function. *****/
+	int interval = 0;
+	while (interval &lt; size / 3)
+		interval = interval * 3 + 1;
+
+	while (interval &gt; 0) {
+		for (int i = interval; i &lt; size; i++) {
+			Element temp = data[i];
+			int j;
+			for (j = i; j &gt;= interval; j -= interval) {
+				//compare_count++;
+				if (data[j - interval] &gt; temp) {
+					data[j] = data[j - interval];
+				//	move_count++;
+				} else
+					break;
+			}
+			data[j] = temp;
+
+		}
+
+		interval = (interval - 1) / 3;
+	}
+
+}
+</pre>
+<p class="caption">ShellSortSuboptimal.cpp:</p>
+<pre>#include "ShellSortSuboptimal.h"
+https://www.geeksforgeeks.org/
+ShellSortSuboptimal::ShellSortSuboptimal() : VectorSorter("Shellsort suboptimal") {}
+ShellSortSuboptimal::~ShellSortSuboptimal()
+{}
+/***** Complete this file. *****/
+
+void ShellSortSuboptimal::run_sort_algorithm() {
+	/***** Complete this member function. *****/
+	// Start with a big gap, then reduce the gap
+	for (int gap = size / 2; gap &gt; 0; gap /= 2) {
+		// Do a gapped insertion sort for this gap size.
+		// The first gap elements a[0..gap-1] are already in gapped order
+		// keep adding one more element until the entire array is
+		// gap sorted
+		for (int i = gap; i &lt; size; i += 1) {
+			// add data[i] to the elements that have been gap sorted
+			// save data[i] in temp and make a hole at position i
+			Element temp = data[i];
+
+			// shift earlier gap-sorted elements up until the correct
+			// location for data[i] is found
+			int j;
+			for (j = i; j &gt;= gap; j -= gap) {
+				//compare_count++;
+				if (data[j - gap] &gt; temp) {
+					data[j] = data[j - gap];
+					//move_count++;
+				} else
+					break;
+			}
+
+			//  put temp (the original a[i]) in its correct location
+			data[j] = temp;
+
+		}
+	}
+
+}
+</pre>
+</div>
+<p class="header providedFiles">Provided files</p>
+<div class="providedFiles">
+<p class="caption">DataAllZeros.h:</p>
+<pre>#ifndef DATAALLZEROS_H_
+#define DATAALLZEROS_H_
+
+#include "DataGenerator.h"
+#include "Element.h"
+
+/**
+ * Generator for data that is all zeros.
+ */
+class DataAllZeros: public DataGenerator
+{
+public:
+    /**
+     * Default constructor.
+     */
+    DataAllZeros();
+
+    /**
+     * Destructor.
+     */
+    virtual ~DataAllZeros();
+
+    /**
+     * Generate all zeros to fill a data vector.
+     * @param data the data vector to fill.
+     */
+    virtual void generate_data(vector&lt;Element&gt;&amp; data, const int size);
+};
+
+#endif /* DATAALLZEROS_H_ */
+</pre>
+<p class="caption">DataGenerator.h:</p>
+<pre>#ifndef DATAGENERATOR_H_
+#define DATAGENERATOR_H_
+
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include "Element.h"
+
+using namespace std;
+
+/**
+ * Abstract base class of the data generator subclasses.
+ */
+class DataGenerator
+{
+public:
+    /**
+     * Constructor.
+     * @param name the name of this generator.
+     */
+    DataGenerator(string name);
+
+    /**
+     * Destructor.
+     */
+    virtual ~DataGenerator();
+
+    /**
+     * Getter
+     * @return the name of this generator.
+     */
+    virtual string get_name();
+
+    /**
+     * Abstract: Generate data.
+     * @param data the data to be generated.
+     * @param size the number of data elements to generate.
+     */
+    virtual void generate_data(vector&lt;Element&gt;&amp; data, const int size) = 0;
+
+private:
+    string name;
+};
+
+#endif /* DATAGENERATOR_H_ */
+</pre>
+<p class="caption">DataRandom.h:</p>
+<pre>#ifndef DATARANDOM_H_
+#define DATARANDOM_H_
+
+#include "DataGenerator.h"
+#include "Element.h"
+
+/**
+ * Generator for unsorted random data.
+ */
+class DataRandom: public DataGenerator
+{
+public:
+    /**
+     * Default constructor.
+     */
+    DataRandom();
+
+    /**
+     * Destructor.
+     */
+    virtual ~DataRandom();
+
+    /**
+     * Generate random values to fill a data vector.
+     * Reuse previously generated data if possible.
+     * @param data the data to be generated.
+     * @param size the number of data elements to generate.
+     */
+    void generate_data(vector&lt;Element&gt;&amp; data, const int size);
+
+private:
+    vector&lt;Element&gt; random_data;
+};
+
+#endif /* DATARANDOM_H_ */
+</pre>
+<p class="caption">DataReverseSorted.h:</p>
+<pre>#ifndef DATAREVERSESORTED_H_
+#define DATAREVERSESORTED_H_
+
+#include "DataGenerator.h"
+#include "Element.h"
+
+/**
+ * Generator for reverse-sorted data.
+ */
+class DataReverseSorted: public DataGenerator
+{
+public:
+    /**
+     * Default constructor.
+     */
+    DataReverseSorted();
+
+    /**
+     * Destructor.
+     */
+    virtual ~DataReverseSorted();
+
+    /**
+     * Generate reverse sorted values (high to low) to fill a data vector.
+     * @param data the data to be generated.
+     * @param size the number of data elements to generate.
+     */
+    virtual void generate_data(vector&lt;Element&gt;&amp; data, const int size);
+};
+
+#endif /* DATAREVERSESORTED_H_ */
+</pre>
+<p class="caption">DataSorted.h:</p>
+<pre>#ifndef DATASORTED_H_
+#define DATASORTED_H_
+
+#include "DataGenerator.h"
+#include "Element.h"
+
+/**
+ * Generator for already sorted data.
+ */
+class DataSorted: public DataGenerator
+{
+public:
+    /**
+     * Default constructor.
+     */
+    DataSorted();
+
+    /**
+     * Destructor.
+     */
+    virtual ~DataSorted();
+
+    /**
+     * Generate already sorted values (low to high) to fill a vector.
+     * @param data the data to be generated.
+     * @param size the number of data elements to generate.
+     */
+    virtual void generate_data(vector&lt;Element&gt;&amp; data, const int size);
+};
+
+#endif /* DATASORTED_H_ */
+</pre>
+<p class="caption">Element.h:</p>
+<pre>#ifndef DATA_H_
+#define DATA_H_
+
+#include &lt;iostream&gt;
+using namespace std;
+
+/**
+ * The data elements that will be sorted.
+ */
+class Element
+{
+public:
+    /**
+     * Default constructor.
+     */
+    Element();
+
+    /**
+     * Constructor.
+     * @param val the element's value.
+     */
+    Element(long val);
+
+    /**
+     * Copy constructor.
+     * @param other the other element to be copied.
+     */
+    Element(const Element&amp; other);
+
+    /**
+     * Destructor.
+     */
+    virtual ~Element();
+
+    /**
+     * Getter.
+     * @return the value of the global copy_count.
+     */
+    static long get_copy_count();
+
+    /**
+     * Getter.
+     * @return the value of the global destructor_count.
+     */
+    static long get_destructor_count();
+
+    /**
+     * Getter.
+     * @return the value.
+     */
+    long get_value() const;
+
+    /**
+     * Reset the values of the global counters.
+     */
+    static void reset();
+
+    /**
+     * Overloaded == operator.
+     * @param elmt1 the first element
+     * @param elmt2 the second element
+     * @return true if the values of two elements are equal, else false.
+     */
+    friend bool operator ==(const Element&amp; elmt1, const Element&amp; elmt2);
+
+    /**
+     * Overloaded &lt; operator.
+     * @param elmt1 the first element
+     * @param elmt2 the second element
+     * @return true if the value the first element is less than
+     *              the value of the second element, else false.
+     */
+    friend bool operator &lt;(const Element&amp; elmt1, const Element&amp; elmt2);
+
+    /**
+     * Overloaded &gt; operator.
+     * @param elmt1 the first element
+     * @param elmt2 the second element
+     * @return true if the value the first element is greater than
+     *              the value of the second element, else false.
+     */
+    friend bool operator &gt;(const Element&amp; elmt1, const Element&amp; elmt2);
+
+    /**
+     * Overloaded &lt;&lt; operator.
+     * @param ostream the output stream.
+     * @param elmt the element to output.
+     * @return the output stream.
+     */
+    friend ostream&amp; operator &lt;&lt;(ostream&amp; outs, const Element&amp; elmt);
+
+private:
+    long value;
+
+    // Static member variables, which are global to the class.
+    // These variables exist independently from any Element objects.
+    static long copy_count;
+    static long destructor_count;
+};
+
+#endif /* DATA_H_ */
+</pre>
+<p class="caption">InsertionSort.h:</p>
+<pre>#ifndef INSERTIONSORT_H_
+#define INSERTIONSORT_H_
+
+#include "VectorSorter.h"
+
+/**
+ * Implement the insertion sort algorithm
+ * for a vector of data.
+ */
+class InsertionSort: public VectorSorter
+{
+public:
+    /**
+     * Default constructor.
+     */
+    InsertionSort();
+
+    /**
+     * Destructor.
+     */
+    virtual ~InsertionSort();
+
+    /**
+     * Run the insertion sort algorithm.
+     * @throws an exception if an error occurred.
+     */
+    virtual void run_sort_algorithm();
+};
+
+#endif /* INSERTIONSORT_H_ */
+</pre>
+<p class="caption">LinkedList.h:</p>
+<pre>#ifndef LINKEDLIST_H_
+#define LINKEDLIST_H_
+
+#include "Node.h"
+
+/**
+ * The singly linked list for the mergesort algorithm.
+ */
+class LinkedList
+{
+public:
+    /**
+     * Default constructor.
+     */
+    LinkedList();
+
+    /**
+     * Constructor: Create a new list from an existing one.
+     * Both lists will share the nodes.
+     * @param head the head of the existing list.
+     * @param tail the tail of the existing list.
+     * @param size the size of the existing list.
+     */
+    LinkedList(Node *head, Node *tail, const int size);
+
+    /**
+     * Destructor.
+     */
+    virtual ~LinkedList();
+
+    /**
+     * Getter.
+     * @return the head of the list.
+     */
+    Node *get_head() const;
+
+    /**
+     * Getter.
+     * @return the tail of the list.
+     */
+    Node *get_tail() const;
+
+    /**
+     * Getter.
+     * @return the size of the list.
+     */
+    int get_size() const;
+
+    /**
+     * Set the head, tail, and size of the linked list.
+     * @param head the head of the linked list.
+     * @param tail the tail of the linked list.
+     * @param size the size of the linked list.
+     */
+    void set(Node *head, Node *tail, int size);
+
+    /**
+     * Remove the head of the list and return the removed node.
+     * @return the removed node.
+     */
+    Node *remove_head();
+
+    /**
+     * Add a node to the tail of the list.
+     * @param elmt the value of the node to add.
+     */
+    void add(const Element&amp; elmt);
+
+    /**
+     * Add a node to the tail of the list.
+     * @param node the node to add.
+     */
+    void add(Node *node);
+
+    /**
+     * Delete all the nodes of the list.
+     */
+    void clear();
+
+    /**
+     * Reset the head, tail, and size of the list.
+     */
+    void reset();
+
+    /**
+     * Print the values of the list's nodes.
+     */
+    void print() const;
+
+    /**
+     * Split this list into two sublists.
+     * @param list1 the first sublist.
+     * @param list2 the second sublist.
+     */
+    void split(LinkedList&amp; list1, LinkedList&amp; list2);
+
+    /**
+     * Add another list to the end of this list.
+     * @param other_list the other list.
+     */
+    void concatenate(LinkedList&amp; other_list);
+
+private:
+    Node *head;
+    Node *tail;
+    int size;
+};
+
+#endif /* LINKEDLIST_H_ */
+</pre>
+<p class="caption">ListSorter.cpp:</p>
+<pre>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include "Element.h"
+#include "ListSorter.h"
+
+/**
+ * Constructor.
+ * @param name the name of the algorithm.
+ */
+ListSorter::ListSorter(string name) : Sorter(name) {}
+
+/**
+ * Destructor.
+ */
+ListSorter::~ListSorter() {}
+
+/**
+ * Generate the data to sort. The data can be random,
+ * already sorted, sorted in reverse, or all zeros.
+ * @param generator the data generator.
+ * @param size the number of data elements.
+ */
+void ListSorter::generate_data(DataGenerator *generator, int size)
+{
+    clear_data();
+
+    vector&lt;Element&gt; v;
+    generator-&gt;generate_data(v, size);
+
+    for (int i = 0; i &lt; size; i++) data.add(v[i]);
+    set_size(size);
+}
+
+/**
+ * Print the data elements.
+ */
+void ListSorter::print_data() const
+{
+    Node *ptr = data.get_head();
+
+    while (ptr != nullptr)
+    {
+        cout &lt;&lt; " " &lt;&lt; ptr-&gt;element.get_value();
+        ptr = ptr-&gt;next;
+    }
+
+    cout &lt;&lt; endl;
+}
+
+/**
+ * Verify that the data is correctly sorted.
+ * @return true if correctly sorted, else false.
+ */
+bool ListSorter::is_data_sorted() const
+{
+    Node *ptr = data.get_head();
+
+    // Chase next pointers from start to end.
+    while ((ptr != nullptr) &amp;&amp; (ptr-&gt;next != nullptr))
+    {
+        if (ptr-&gt;element.get_value() &gt; ptr-&gt;next-&gt;element.get_value()) return false;  // incorrect
+        ptr = ptr-&gt;next;
+    }
+
+    return true;  // correct
+}
+
+/**
+ * Clear the data.
+ */
+void ListSorter::clear_data()
+{
+    if (data.get_size() &gt; 0) data.clear();
+}
+</pre>
+<p class="caption">ListSorter.h:</p>
+<pre>#ifndef LISTSORTER_H_
+#define LISTSORTER_H_
+
+#include &lt;string&gt;
+#include "Sorter.h"
+#include "LinkedList.h"
+
+/**
+ * Abstract base class of the singly linked list sorting algorithms.
+ */
+class ListSorter: public Sorter
+{
+public:
+    ListSorter(string name);
+    virtual ~ListSorter();
+
+    virtual void generate_data(DataGenerator *generator, int size);
+    void print_data() const;
+    void clear_data();
+
+protected:
+    LinkedList data;  // the data to sort
+
+    bool is_data_sorted() const;
+};
+
+#endif /* LISTSORTER_H_ */
+</pre>
+<p class="caption">MergeSort.h:</p>
+<pre>#ifndef MERGESORT_H_
+#define MERGESORT_H_
+
+#include &lt;string&gt;
+#include "LinkedList.h"
+#include "ListSorter.h"
+
+/**
+ * The class that implements the mergesort algorithm
+ * for a singly linked list of data.
+ */
+class MergeSort: public ListSorter
+{
+public:
+    /**
+     * Default constructor.
+     */
+    MergeSort();
+
+    /**
+     * Destructor.
+     */
+    virtual ~MergeSort();
+
+    /**
+     * Run the mergesort algorithm.
+     * @throw an error message if something went wrong.
+     */
+    virtual void run_sort_algorithm() throw(string);
+
+private:
+    /**
+     * The mergesort algorithm recursively splits and merges data lists.
+     * @param list the list of data to sort.
+     */
+    void mergesort(LinkedList&amp; list);
+
+    /**
+     * Merge two sublists back into a single list.
+     * @param list the merged list.
+     * @param sublist1 the first sublist.
+     * @param sublist2 the second sublist.
+     */
+    void merge(LinkedList&amp; list, LinkedList&amp; sublist1, LinkedList&amp; sublist2);
+
+    /**
+     * Clear the data.
+     */
+    void clear();
+};
+
+#endif /* MERGESORT_H_ */
+</pre>
+<p class="caption">Node.h:</p>
+<pre>#ifndef NODE_H_
+#define NODE_H_
+
+#include "Element.h"
+
+/**
+ * A node of the singly linked list for mergesort.
+ */
+class Node
+{
+public:
+    /**
+     * Default constructor.
+     */
+    Node();
+
+    /**
+     * Constructor.
+     * @param elmt the element contained in this node.
+     */
+    Node(const Element element);
+
+    /**
+     * Destructor.
+     */
+    virtual ~Node();
+
+    Element element;
+    Node *next;
+};
+
+#endif /* NODE_H_ */
+</pre>
+<p class="caption">QuickSortOptimal.h:</p>
+<pre>#ifndef QUICKSORTOPTIMAL_H_
+#define QUICKSORTOPTIMAL_H_
+
+#include "QuickSorter.h"
+
+/**
+ * Implement the optimal quicksort algorithm
+ * for a vector of data that uses a good pivot strategy.
+ */
+class QuickSortOptimal: public QuickSorter
+{
+public:
+    /**
+     * Default constructor.
+     */
+    QuickSortOptimal();
+
+    /**
+     * Destructor.
+     */
+    virtual ~QuickSortOptimal();
+
+private:
+    /**
+     * Choose a good pivot, the median-of-three:
+     * The middle value of the leftmost, rightmost, and center elements.
+     * This is a compromise since the most optimal pivot would be the
+     * median of the subrange, but that's too expensive to compute.
+     * @param left the left index of the subrange to sort.
+     * @param right the right index of the subrange to sort.
+     * @return the chosen pivot value.
+     */
+    Element&amp; choose_pivot_strategy(const int left, const int right);
+};
+
+#endif /* QUICKSORTOPTIMAL_H_ */
+</pre>
+<p class="caption">QuickSortSuboptimal.h:</p>
+<pre>#ifndef QUICKSORTSUBOPTIMAL_H_
+#define QUICKSORTSUBOPTIMAL_H_
+
+#include "QuickSorter.h"
+
+/**
+ * Implement the suboptimal quicksort algorithm
+ * for a vector of data that uses a bad pivot strategy.
+ */
+class QuickSortSuboptimal: public QuickSorter
+{
+public:
+    /**
+     * Default constructor.
+     */
+    QuickSortSuboptimal();
+
+    /**
+     * Destructor.
+     */
+    virtual ~QuickSortSuboptimal();
+
+private:
+    /**
+     * Choose a bad pivot, always the leftmost element of the subrange.
+     * @param left the left index of the subrange to sort.
+     * @param right the right index of the subrange to sort.
+     * @return the chosen pivot value.
+     */
+    virtual Element&amp; choose_pivot_strategy(const int left, const int right);
+};
+
+#endif /* QUICKSORTSUBOPTIMAL_H_ */
+</pre>
+<p class="caption">QuickSorter.h:</p>
+<pre>#ifndef QUICKSORTER_H_
+#define QUICKSORTER_H_
+
+#include &lt;string&gt;
+#include "VectorSorter.h"
+#include "Element.h"
+
+/**
+ * The abstract base class of the quicksort algorithms.
+ */
+class QuickSorter: public VectorSorter
+{
+public:
+    /**
+     * Constructor.
+     * @param name the name of this algorithm.
+     */
+    QuickSorter(string name);
+
+    /**
+     * Destructor.
+     */
+    virtual ~QuickSorter();
+
+    /**
+     * Run the quicksort algorithm.
+     * @throws an exception if an error occurred.
+     */
+    virtual void run_sort_algorithm() throw (string);
+
+protected:
+    /**
+     * Abstract: Choose a pivot strategy.
+     * @param left the left index of the partition to sort.
+     * @param right the right index of the partition to sort.
+     */
+    virtual Element&amp; choose_pivot_strategy(const int left, const int right) = 0;
+
+private:
+    /**
+     * The quicksort algorithm recursively sorts data subranges.
+     * @param left the left index of the subrange to sort.
+     * @param right the right index of the subrange to sort.
+     */
+    void quicksort(const int left, const int right);
+
+    /**
+     * Partition the subrange by moving data elements &lt; pivot to the left
+     * and data elements &gt; pivot to the right.
+     * @param left the left index of the partition to sort.
+     * @param right the right index of the partition to sort.
+     * @param pivot the pivot value.
+     */
+    int partition(const int left, const int right, const Element&amp; pivot);
+
+    /**
+     * Choose the pivot according to a pivot strategy.
+     * The chosen pivot will be moved temporarily to the right end.
+     * @param left the left index of the partition to sort.
+     * @param right the right index of the partition to sort.
+     * @return the pivot value.
+     */
+    Element&amp; choose_pivot(const int left, const int right);
+};
+
+#endif /* QUICKSORTER_H_ */
+</pre>
+<p class="caption">SelectionSort.cpp:</p>
+<pre>#include "SelectionSort.h"
+
+SelectionSort::SelectionSort() : VectorSorter("Selection sort") {}
+
+SelectionSort::~SelectionSort() {}
+
+void SelectionSort::run_sort_algorithm()
+{
+    int sizem1 = size - 1;
+
+    // For each element of the vector ...
+    for (int i = 0; i &lt; sizem1; i++)
+    {
+        Element smallest = data[i];
+        int index_of_smallest = i;
+
+        // ... find the index of the smallest value
+        // in the rest of the vector.
+        for (int j = i + 1; j &lt; size; j++)
+        {
+            compare_count++;
+
+            if (data[j] &lt; smallest)
+            {
+                smallest = data[j];
+                index_of_smallest = j;
+            }
+        }
+
+        // Swap in the smallest value if it isn't already there.
+        if (i != index_of_smallest) swap(i, index_of_smallest);
+    }
+}
+</pre>
+<p class="caption">SelectionSort.h:</p>
+<pre>#ifndef SELECTIONSORT_H_
+#define SELECTIONSORT_H_
+
+#include "VectorSorter.h"
+
+/**
+ * Implement the selection sort algorithm
+ * for a vector of data.
+ */
+class SelectionSort: public VectorSorter
+{
+public:
+    /**
+     * Default constructor.
+     */
+    SelectionSort();
+
+    /**
+     * Destructor.
+     */
+    virtual ~SelectionSort();
+
+    /**
+     * Run the selection sort algorithm.
+     */
+    virtual void run_sort_algorithm();
+};
+
+#endif /* SELECTIONSORT_H_ */
+</pre>
+<p class="caption">ShellSortOptimal.h:</p>
+<pre>#ifndef SHELLSORTOPTIMAL_H_
+#define SHELLSORTOPTIMAL_H_
+
+#include "VectorSorter.h"
+
+/**
+ * Implement the optimal shellsort algorithm
+ * for a vector of data, where the diminishing increment is
+ * calculated according to Don Knuth.
+ */
+class ShellSortOptimal: public VectorSorter
+{
+public:
+    /**
+     * Default constructor.
+     */
+    ShellSortOptimal();
+
+    /**
+     * Destructor.
+     */
+    virtual ~ShellSortOptimal();
+
+    /**
+     * Run the optimal shellsort algorithm.
+     * According to Don Knuth:
+     * h = 3*i + 1 for i = 0, 1, 2, ... used in reverse.
+     * @throws an exception if an error occurred.
+     */
+    virtual void run_sort_algorithm();
+};
+
+#endif /* SHELLSORTOPTIMAL_H_ */
+</pre>
+<p class="caption">ShellSortSuboptimal.h:</p>
+<pre>#ifndef SHELLSORTSUBOPTIMAL_H_
+#define SHELLSORTSUBOPTIMAL_H_
+
+#include "VectorSorter.h"
+
+/**
+ * Implement the suboptimal Shellsort algorithm
+ * for a vector of data, where the diminishing increment is halved
+ * for each pass.
+ */
+class ShellSortSuboptimal: public VectorSorter
+{
+public:
+    /**
+     * Default constructor.
+     */
+    ShellSortSuboptimal();
+
+    /**
+     * Destructor.
+     */
+    virtual ~ShellSortSuboptimal();
+
+    /**
+     * Run the suboptimal shellsort algorithm.
+     * @throws an exception if an error occurred.
+     */
+    virtual void run_sort_algorithm();
+};
+
+#endif /* SHELLSORTSUBOPTIMAL_H_ */
+</pre>
+<p class="caption">SortTests.cpp:</p>
+<pre>//SAMPLE
+
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;string&gt;
+#include &lt;ctime&gt;
+#include &lt;chrono&gt;
+#include "DataRandom.h"
+#include "DataSorted.h"
+#include "DataReverseSorted.h"
+#include "DataAllZeros.h"
+#include "SelectionSort.h"
+#include "InsertionSort.h"
+#include "ShellSortSuboptimal.h"
+#include "ShellSortOptimal.h"
+#include "QuickSortSuboptimal.h"
+#include "QuickSortOptimal.h"
+#include "MergeSort.h"
+
+using namespace std;
+using namespace std::chrono;
+
+bool do_sort(Sorter *sorter, int n, DataGenerator *generator);
+void output_sort_stats(bool sorted, const Sorter *sorter);
+string commafy(long n);
+
+/**
+ * Main.
+ */
+int main()
+{
+    bool sorted;
+
+    // Number of data items to test.
+    int N[] = {10, 100, 1000, 10000};
+
+    // Sorting algorithms.
+    Sorter *sorters[] =
+    {
+        new SelectionSort(),
+        new InsertionSort(),
+        new ShellSortSuboptimal(),
+        new ShellSortOptimal(),
+        new QuickSortSuboptimal(),
+        new QuickSortOptimal(),
+        new MergeSort(),
+    };
+
+    // Data generators.
+    DataGenerator *generators[] =
+    {
+        new DataRandom(),
+        new DataSorted(),
+        new DataReverseSorted(),
+        new DataAllZeros(),
+    };
+
+    steady_clock::time_point start_time = steady_clock::now();
+
+    // Loop for each data generator.
+    for (DataGenerator *generator : generators)
+    {
+        string generator_name = generator-&gt;get_name();
+
+        cout &lt;&lt; endl;
+        for (int i = 0; i &lt; generator_name.length(); i++) cout &lt;&lt; "=";
+        cout &lt;&lt; endl &lt;&lt; generator_name &lt;&lt; endl;
+        for (int i = 0; i &lt; generator_name.length(); i++) cout &lt;&lt; "=";
+        cout &lt;&lt; endl;
+
+        // Loop for each data size.
+        for (int n : N)
+        {
+            cout &lt;&lt; endl &lt;&lt; "N = " &lt;&lt; commafy(n) &lt;&lt; endl &lt;&lt; endl;
+            cout &lt;&lt; setw(25) &lt;&lt; "ALGORITHM" &lt;&lt; setw(12) &lt;&lt; "COPIES"
+                 &lt;&lt; setw(12) &lt;&lt; "DESTRUCTS" &lt;&lt; setw(12) &lt;&lt; "MOVES"
+                 &lt;&lt; setw(12) &lt;&lt; "COMPARES"  &lt;&lt; setw(12) &lt;&lt; "MILLISECS"
+                 &lt;&lt; endl;
+
+            // Loop for each sorting algorithm.
+            for (Sorter *sorter : sorters)
+            {
+                cout &lt;&lt; setw(25) &lt;&lt; sorter-&gt;get_name();
+                sorted = do_sort(sorter, n, generator);
+                output_sort_stats(sorted, sorter);
+
+                // Clean up after a sort.
+                sorter-&gt;clear_data();
+            }
+        }
+    }
+
+    // Pick up the garbage.
+    for (Sorter *sorter : sorters) delete sorter;
+    for (DataGenerator *generator : generators) delete generator;
+
+    steady_clock::time_point end_time = steady_clock::now();
+    long elapsed_time = duration_cast&lt;seconds&gt;(end_time - start_time).count();
+    cout &lt;&lt; endl &lt;&lt; "Done! " &lt;&lt; elapsed_time &lt;&lt; " seconds." &lt;&lt; endl;
+    return 0;
+}
+
+/**
+ * Perform a sort with a given algorithm and data generator.
+ * @param sorter the sorting algorithm.
+ * @param n the number of data elements to sort.
+ * @param generator the data generator.
+ */
+bool do_sort(Sorter *sorter, int n, DataGenerator *generator)
+{
+    // Generate data for the algorithm to sort.
+    sorter-&gt;generate_data(generator, n);
+
+    try
+    {
+        return sorter-&gt;sort();  // do a sort
+    }
+    catch (string&amp; message)
+    {
+        cout &lt;&lt; endl &lt;&lt; message &lt;&lt; endl;
+        return false;
+    }
+}
+
+/**
+ * Output a sort algorithm's move and compare counts and elapsed time.
+ * @param sorted true if correctly sorted, else false.
+ * @param sorter the sorting algorithm.
+ */
+void output_sort_stats(bool sorted, const Sorter *sorter)
+{
+    if (sorted)
+    {
+        cout &lt;&lt; setw(12) &lt;&lt; commafy(sorter-&gt;get_copy_count());
+        cout &lt;&lt; setw(12) &lt;&lt; commafy(sorter-&gt;get_destructor_count());
+        cout &lt;&lt; setw(12) &lt;&lt; commafy(sorter-&gt;get_move_count());
+        cout &lt;&lt; setw(12) &lt;&lt; commafy(sorter-&gt;get_compare_count());
+        cout &lt;&lt; setw(12) &lt;&lt; commafy(sorter-&gt;get_elapsed_ms());
+        cout &lt;&lt; endl;
+    }
+    else
+    {
+        cout &lt;&lt; "***** Sort error! *****" &lt;&lt; endl;
+    }
+}
+
+/**
+ * Convert a number to a string with commas.
+ * @param n the number.
+ */
+string commafy(long n)
+{
+    string str = to_string(n);
+    int pos = str.length() - 3;
+
+    while (pos &gt; 0)
+    {
+        str.insert(pos, ",");
+        pos -= 3;
+    }
+
+    return str;
+}
+</pre>
+<p class="caption">Sorter.cpp:</p>
+<pre>#include "Sorter.h"
+#include "Element.h"
+
+using namespace std;
+
+Sorter::Sorter(string name)
+    : size(0), move_count(0), compare_count(0), name(name), elapsed_time(0) {}
+
+Sorter::~Sorter() {}
+
+long   Sorter::get_copy_count()       const { return Element::get_copy_count(); }
+long   Sorter::get_destructor_count() const { return Element::get_destructor_count(); }
+string Sorter::get_name()             const { return name; }
+int    Sorter::get_size()             const { return size; }
+long   Sorter::get_move_count()       const { return move_count; }
+long   Sorter::get_compare_count()    const { return compare_count; }
+long   Sorter::get_elapsed_ms()       const { return elapsed_time; }
+
+void Sorter::set_size(const int sz) { size = sz; }
+
+bool Sorter::sort() throw (string)
+{
+    move_count = 0;
+    compare_count = 0;
+    Element::reset();
+
+    start_timer();
+
+    // Sort the data according to the algorithm
+    // that is defined by the sorting subclasses.
+    run_sort_algorithm();
+
+    stop_timer();
+    return is_data_sorted();
+}
+
+void Sorter::start_timer() { timer = steady_clock::now(); }
+
+void Sorter::stop_timer()
+{
+    steady_clock::time_point now = steady_clock::now();
+    elapsed_time = duration_cast&lt;milliseconds&gt;(now - timer).count();
+}
+</pre>
+<p class="caption">Sorter.h:</p>
+<pre>#ifndef SORTER_H_
+#define SORTER_H_
+
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;ctime&gt;
+#include &lt;chrono&gt;
+#include "DataGenerator.h"
+
+using namespace std;
+using namespace std::chrono;
+
+/**
+ * The abstract base class of the sorting algorithms.
+ */
+class Sorter
+{
+public:
+    /**
+     * Constructor.
+     * @param name the name of the sorting algorithm.
+     */
+    Sorter(string name);
+
+    /**
+     * Destructor.
+     */
+    virtual ~Sorter();
+
+    /**
+     * Getter.
+     * @return the number of copy constructor calls during a sort.
+     */
+    long get_copy_count() const;
+
+    /**
+     * Getter.
+     * @return the number of destructor calls during a sort.
+     */
+    long get_destructor_count() const;
+
+    /**
+     * Getter.
+     * @return the name of the sorting algorithm.
+     */
+    string get_name() const;
+
+    /**
+     * Getter.
+     * @return the data size.
+     */
+    int get_size() const;
+
+    /**
+     * Setter.
+     * @param sz the data size to set.
+     */
+    void set_size(const int sz);
+
+    /**
+     * Getter.
+     * @return the number of moves during a sort.
+     */
+    long get_move_count() const;
+
+    /**
+     * Getter.
+     * @return the number of compares during a sort.
+     */
+    long get_compare_count() const;
+
+    /**
+     * Getter.
+     * @return the elapsed time (in ms) of a sort.
+     */
+    long get_elapsed_ms() const;
+
+    /**
+     * Sort the data by invoking the sorting algorithm.
+     * Count the number of data element moves and compares.
+     * Calculate the elapsed time in milliseconds.
+     * @throws an exception if an error occurred.
+     */
+    virtual bool sort() throw (string);
+
+    /**
+     * Abstract: Generate the data to sort.
+     * @param generator the data generator.
+     * @param size the number of data elements to generate.
+     */
+    virtual void generate_data(DataGenerator* generator, int size) = 0;
+
+    /**
+     * Abstract: Clear the data to sort.
+     */
+    virtual void clear_data() = 0;
+
+    /**
+     * Abstract: Print the data to sort. Useful for debugging.
+     */
+    virtual void print_data() const = 0;
+
+protected:
+    int  size;           // number of data elements to sort
+    long move_count;     // count of data element moves during a sort
+    long compare_count;  // count of data element compares during a sort
+
+    /**
+     * Abstract: Run a sort algorithm.
+     */
+    virtual void run_sort_algorithm() = 0;
+
+    /**
+     * Abstract: Verify that the data is sorted.
+     * @return true if sorted, else return false.
+     */
+    virtual bool is_data_sorted() const = 0;
+
+private:
+    string name;  // name of the sort algorithm
+
+    steady_clock::time_point timer;
+    long elapsed_time;
+
+    /**
+     * Start the timer before beginning a sort.
+     */
+    void start_timer();
+
+    /**
+     * Stop the timer after the sort finishes.
+     */
+    void stop_timer();
+};
+
+#endif /* SORTER_H_ */
+</pre>
+<p class="caption">VectorSorter.cpp:</p>
+<pre>#include &lt;iostream&gt;
+#include &lt;ctime&gt;
+
+#include "VectorSorter.h"
+
+VectorSorter::VectorSorter(string name) : Sorter(name) {}
+
+VectorSorter::~VectorSorter() {}
+
+void VectorSorter::generate_data(DataGenerator *generator, const int size)
+{
+    clear_data();
+    generator-&gt;generate_data(data, size);
+    set_size(size);
+}
+
+void VectorSorter::print_data() const
+{
+    int size = get_size();
+    for (int i = 0; i &lt; size; i++) cout &lt;&lt; " " &lt;&lt; data[i];
+
+    cout &lt;&lt; endl;
+}
+
+bool VectorSorter::is_data_sorted() const
+{
+    int sizem1 = get_size() - 1;
+    for (int i = 0; i &lt; sizem1; i++)
+    {
+        if (data[i] &gt; data[i+1]) return false;  // incorrect
+    }
+
+    return true;  // correct
+}
+
+void VectorSorter::clear_data()
+{
+    if (data.size() &gt; 0) data.clear();
+}
+
+void VectorSorter::swap(const int index1, const int index2)
+{
+    Element temp = data[index1];
+    data[index1] = data[index2];
+    data[index2] = temp;
+
+    move_count += 2;
+}
+</pre>
+<p class="caption">VectorSorter.h:</p>
+<pre>#ifndef VECTORSORTER_H_
+#define VECTORSORTER_H_
+
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include "Sorter.h"
+#include "Element.h"
+using namespace std;
+
+/**
+ * Abstract base class of the vector sorting subclasses.
+ */
+class VectorSorter: public Sorter
+{
+public:
+    /**
+     * Constructor.
+     * @param name the name of the sort algorithm.
+     */
+    VectorSorter(string name);
+
+    /**
+     * Destructor.
+     */
+    virtual ~VectorSorter();
+
+    /**
+     * Generate the data to sort. The data can be random,
+     * already sorted, sorted in reverse, or all zeros.
+     * @param generator the data generator.
+     * @param size the number of data elements.
+     */
+    virtual void generate_data(DataGenerator *generator, const int size);
+
+    /**
+     * Clear the data.
+     */
+    void clear_data();
+
+    /**
+     * Print the data elements.
+     */
+    void print_data() const;
+
+protected:
+    vector&lt;Element&gt; data;  // the vector to sort
+
+    /**
+     * Verify that the data is correctly sorted.
+     * @return true if correctly sorted, else false.
+     */
+    bool is_data_sorted() const;
+
+    /**
+     * Exchange the values of two data elements.
+     * Counts as two moves.
+     */
+    void swap(const int index1, const int index2);
+};
+
+#endif /* VECTORSORTER_H_ */
+</pre>
+</div>
+<p class="header score">Score</p>
+<div class="score">
+<p class="score">0</p>
+</div>
+<div class="footnotes"><div class="footnote">2018-04-27T00:53:43Z</div>
+</div>
+</body></html>

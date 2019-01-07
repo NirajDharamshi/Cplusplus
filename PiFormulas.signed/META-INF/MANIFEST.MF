@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Created-By: 1.8.0_151 (Oracle Corporation)
+
+Name: codecheck.log
+SHA-256-Digest: TdfVLDWW053IygdJu7ayHVxefkdbY/vz2WllZTE53hQ=
+
+Name: report.html
+SHA-256-Digest: ziBu7BVhusGI9SXm/Q+/F3fPtSCRMr06lMSLFc+7Aa0=
+
+Name: PiFormulas.cpp
+SHA-256-Digest: jgDE8CqoXt1F5IgqZUc67cQgmR5dEwwPogfeBGutYlQ=
+
+Name: codecheck.out
+SHA-256-Digest: 47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+

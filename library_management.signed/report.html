@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Submission" content="/tmp/codecheck/18030901273476388883862612535"/>
+<meta name="Level" content="1"/>
+<meta name="Time" content="2018-03-09T01:27:44Z"/>
+<meta name="ID" content="Book"/>
+<meta name="User" content="1801310608b6f1wjv9hvt95tlezt0umla91"/>
+<meta name="Problem" content="ext/17093021036ojjx46vmor05k6wbx2y3qnn"/>
+<meta name="Elapsed" content="3125 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+.note {color: blue; font-weight: bold;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header run">Testing BookApp.cpp</p>
+<div class="run">
+<p class="caption">Error:</p>
+<pre class="output">/tmp/codecheck/18030901273476388883862612535/BookApp.cpp: In function ‘void searchAuthor(std::__cxx11::string, const std::vector&lt;Book&gt;&amp;)’:
+/tmp/codecheck/18030901273476388883862612535/BookApp.cpp:175:40: error: passing ‘const value_type {aka const Book}’ as ‘this’ argument discards qualifiers [-fpermissive]
+         if(author==catalog[i].get_last())
+                                        ^
+In file included from /tmp/codecheck/18030901273476388883862612535/BookApp.cpp:1:0:
+/tmp/codecheck/18030901273476388883862612535/Book.h:31:12: note:   in call to ‘std::__cxx11::string Book::get_last()’
+     string get_last();
+            ^
+/tmp/codecheck/18030901273476388883862612535/BookApp.cpp:177:16: error: no match for ‘operator&lt;&lt;’ (operand types are ‘std::ostream {aka std::basic_ostream&lt;char&gt;}’ and ‘const value_type {aka const Book}’)
+            cout&lt;&lt;catalog[i];
+                ^
+In file included from /usr/include/c++/5/iostream:39:0,
+                 from /tmp/codecheck/18030901273476388883862612535/BookApp.cpp:3:
+/usr/include/c++/5/ostream:108:7: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp; (*)(std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp;)) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;; std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type = std::basic_ostream&lt;char&gt;]
+       operator&lt;&lt;(__ostream_type&amp; (*__pf)(__ostream_type&amp;))
+       ^
+/usr/include/c++/5/ostream:108:7: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘std::basic_ostream&lt;char&gt;::__ostream_type&amp; (*)(std::basic_ostream&lt;char&gt;::__ostream_type&amp;) {aka std::basic_ostream&lt;char&gt;&amp; (*)(std::basic_ostream&lt;char&gt;&amp;)}’
+/usr/include/c++/5/ostream:117:7: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(std::basic_ostream&lt;_CharT, _Traits&gt;::__ios_type&amp; (*)(std::basic_ostream&lt;_CharT, _Traits&gt;::__ios_type&amp;)) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;; std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type = std::basic_ostream&lt;char&gt;; std::basic_ostream&lt;_CharT, _Traits&gt;::__ios_type = std::basic_ios&lt;char&gt;]
+       operator&lt;&lt;(__ios_type&amp; (*__pf)(__ios_type&amp;))
+       ^
+/usr/include/c++/5/ostream:117:7: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘std::basic_ostream&lt;char&gt;::__ios_type&amp; (*)(std::basic_ostream&lt;char&gt;::__ios_type&amp;) {aka std::basic_ios&lt;char&gt;&amp; (*)(std::basic_ios&lt;char&gt;&amp;)}’
+/usr/include/c++/5/ostream:127:7: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(std::ios_base&amp; (*)(std::ios_base&amp;)) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;; std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type = std::basic_ostream&lt;char&gt;]
+       operator&lt;&lt;(ios_base&amp; (*__pf) (ios_base&amp;))
+       ^
+/usr/include/c++/5/ostream:127:7: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘std::ios_base&amp; (*)(std::ios_base&amp;)’
+/usr/include/c++/5/ostream:166:7: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(long int) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;; std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type = std::basic_ostream&lt;char&gt;]
+       operator&lt;&lt;(long __n)
+       ^
+/usr/include/c++/5/ostream:166:7: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘long int’
+/usr/include/c++/5/ostream:170:7: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(long unsigned int) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;; std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type = std::basic_ostream&lt;char&gt;]
+       operator&lt;&lt;(unsigned long __n)
+       ^
+/usr/include/c++/5/ostream:170:7: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘long unsigned int’
+/usr/include/c++/5/ostream:174:7: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(bool) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;; std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type = std::basic_ostream&lt;char&gt;]
+       operator&lt;&lt;(bool __n)
+       ^
+/usr/include/c++/5/ostream:174:7: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘bool’
+In file included from /usr/include/c++/5/ostream:638:0,
+                 from /usr/include/c++/5/iostream:39,
+                 from /tmp/codecheck/18030901273476388883862612535/BookApp.cpp:3:
+/usr/include/c++/5/bits/ostream.tcc:91:5: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(short int) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;]
+     basic_ostream&lt;_CharT, _Traits&gt;::
+     ^
+/usr/include/c++/5/bits/ostream.tcc:91:5: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘short int’
+In file included from /usr/include/c++/5/iostream:39:0,
+                 from /tmp/codecheck/18030901273476388883862612535/BookApp.cpp:3:
+/usr/include/c++/5/ostream:181:7: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(short unsigned int) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;; std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type = std::basic_ostream&lt;char&gt;]
+       operator&lt;&lt;(unsigned short __n)
+       ^
+/usr/include/c++/5/ostream:181:7: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘short unsigned int’
+In file included from /usr/include/c++/5/ostream:638:0,
+                 from /usr/include/c++/5/iostream:39,
+                 from /tmp/codecheck/18030901273476388883862612535/BookApp.cpp:3:
+/usr/include/c++/5/bits/ostream.tcc:105:5: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(int) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;]
+     basic_ostream&lt;_CharT, _Traits&gt;::
+     ^
+/usr/include/c++/5/bits/ostream.tcc:105:5: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘int’
+In file included from /usr/include/c++/5/iostream:39:0,
+                 from /tmp/codecheck/18030901273476388883862612535/BookApp.cpp:3:
+/usr/include/c++/5/ostream:192:7: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(unsigned int) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;; std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type = std::basic_ostream&lt;char&gt;]
+       operator&lt;&lt;(unsigned int __n)
+       ^
+/usr/include/c++/5/ostream:192:7: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘unsigned int’
+/usr/include/c++/5/ostream:201:7: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(long long int) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;; std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type = std::basic_ostream&lt;char&gt;]
+       operator&lt;&lt;(long long __n)
+       ^
+/usr/include/c++/5/ostream:201:7: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘long long int’
+/usr/include/c++/5/ostream:205:7: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(long long unsigned int) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;; std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type = std::basic_ostream&lt;char&gt;]
+       operator&lt;&lt;(unsigned long long __n)
+       ^
+/usr/include/c++/5/ostream:205:7: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘long long unsigned int’
+/usr/include/c++/5/ostream:220:7: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(double) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;; std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type = std::basic_ostream&lt;char&gt;]
+       operator&lt;&lt;(double __f)
+       ^
+/usr/include/c++/5/ostream:220:7: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘double’
+/usr/include/c++/5/ostream:224:7: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(float) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;; std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type = std::basic_ostream&lt;char&gt;]
+       operator&lt;&lt;(float __f)
+       ^
+/usr/include/c++/5/ostream:224:7: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘float’
+/usr/include/c++/5/ostream:232:7: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(long double) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;; std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type = std::basic_ostream&lt;char&gt;]
+       operator&lt;&lt;(long double __f)
+       ^
+/usr/include/c++/5/ostream:232:7: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘long double’
+/usr/include/c++/5/ostream:245:7: note: candidate: std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type&amp; std::basic_ostream&lt;_CharT, _Traits&gt;::operator&lt;&lt;(const void*) [with _CharT = char; _Traits = std::char_traits&lt;char&gt;; std::basic_ostream&lt;_CharT, _Traits&gt;::__ostream_type = std::basic_ostream&lt;char&gt;]
+       operator&lt;&lt;(const void* __p)
+       ^
+/usr/include/c++/5/ostream:245:7: note:   no known conversion for argument 1 from ‘const value_type {aka const Book}’ to ‘const void*’
+In file included from /usr/include/c++/5/ostream:638:0,
+                 from /usr/include/c++/5/iostream:39,
+                 from /tmp/codecheck/18030901273476388883862612535/BookApp.cpp:3:
+/usr/inclu
+...
+Remainder truncated
+</pre>
+</div>
+<p class="header studentFiles">Student files</p>
+<div class="studentFiles">
+<p class="caption">Book.cpp:</p>
+<pre>#include "Book.h"
+#include &lt;vector&gt;
+#include&lt;iostream&gt;
+#include&lt;iomanip&gt;
+#include&lt;stdio&gt;
+#include&lt;string&gt;
+
+using namespace std;
+
+//Default constructor
+Book::Book() {
+    isbn="";
+    last="";
+    first="";
+    title="";
+	category = Category::NONE;
+}
+;
+//Parameterized constructor
+Book::Book(string isbn, string last, string first, string title,
+		Category category) :
+ {
+					
+   isbn=isbn;
+   last=last;
+   first=first;
+   title=title;
+   category=category;
+}
+
+//Destructor
+Book::~Book() {
+}
+
+
+// getter functions
+string Book::get_isbn() const {
+	return isbn;
+}
+
+string Book::get_first() const {
+	return first;
+}
+
+string Book::get_last() const {
+	return last;
+}
+
+string Book::get_title() const {
+	return title;
+}
+
+string Book::get_category() const {
+
+	if (category == Book::Category::FICTION) {
+		return "fiction";
+	} else if (category == Book::Category::HISTORY) {
+		return "history";
+	} else if (category == Book::Category::TECHNICAL) {
+		return "technical";
+	} else (category == Book::Category::NONE) {
+		return "none";
+	} 
+}
+
+// Output operator overloading
+
+ostream&amp; operator &lt;&lt;(ostream&amp; outs, const Book&amp; B1) {
+
+output&lt;&lt;"Book{ISBN="&lt;&lt;b.isbn&lt;&lt;", last="&lt;&lt;b.last
+  &lt;&lt;", first="&lt;&lt;b.first&lt;&lt;", title="&lt;&lt;b.title
+&lt;&lt;", category="&lt;&lt;b.category&lt;&lt;"}";
+
+   return output;
+}
+
+//input operator overloading
+istream&amp; operator &gt;&gt;(istream&amp; ins, Book&amp; B1) {
+string cat;
+   input.get();
+   getline(input,b.isbn,',');
+   getline(input,b.last,',');
+   getline(input,b.first,',');
+   getline(input,b.title,',');
+   getline(input,cat);
+   
+   switch(cat)
+   {
+      case "fiction":b.category=Book::Category::FICTION;break;
+      case "history":b.category=Book::Category::HISTORY;break;
+      case "technical":b.category=Book::Category::TECHNICAL;break;
+      default:b.category=Book::Category::NONE;
+   }
+   
+
+   return input;
+}
+</pre>
+<p class="caption">Book.h:</p>
+<pre>#ifndef BOOK_H_
+#define BOOK_H_
+
+#include &lt;string&gt;
+using namespace std;
+
+// The Book class.
+
+class Book {
+public:
+
+	//Book categories.
+	enum class Category {
+		FICTION, HISTORY, TECHNICAL, NONE
+	};
+
+// Default constructor.
+	Book();
+
+	//Constructor
+	Book(string isbn, string last, string first, string title,
+			Category category);
+
+
+	//Destructor
+	~Book();
+
+	//member functions
+	Book&amp; operator=(const Book&amp; other);
+    string get_isbn();
+    string get_last();
+    string get_first();
+    string get_title();
+    Category get_category();
+
+	// Operaor Overloading functions
+//	friend Category get_category(string cat_str);
+    friend istream&amp; operator&gt;&gt;(istream&amp; inp, Book&amp; b);
+    friend ostream&amp; operator&lt;&lt;(ostream&amp; out, Book&amp; b);
+
+	//Private members
+private:
+
+	string isbn;
+	string last;
+	string first;
+	string title;
+	Category category;
+
+};
+
+#endif /* EMPLOYEE_H_ */
+</pre>
+<p class="caption">BookApp.cpp:</p>
+<pre>#include "Book.h"
+#include &lt;vector&gt;
+#include&lt;iostream&gt;
+#include&lt;fstream&gt;
+#include&lt;string&gt;
+#include&lt;iomanip&gt;
+
+/***** Complete this file. *****/
+
+using namespace std;
+
+// Status codes.
+enum class StatusCode {OK, DUPLICATE, NOT_FOUND, INVALID_COMMAND};
+
+/**
+ * Find the book in the catalog with the given ISBN.
+ * Use a binary search.
+ * @param isbn the ISBN.
+ * @param catalog the vector of book records.
+ * @return the vector index of the book if found, else return -1.
+ */
+int find(const string isbn, const vector&lt;Book&gt;&amp; catalog);
+void searchAuthor(const string author,const vector&lt;Book&gt;&amp; catalog);
+void searchCategory(const string category,const vector&lt;Book&gt;&amp; catalog);
+
+const string INPUT_FILE_NAME = "commands.in";
+
+/**
+ * The main. Open the command input file and loop to process commands.
+ */
+int main()
+{
+    // Open the input file.
+    ifstream input;
+    input.open(INPUT_FILE_NAME);
+    if (input.fail())
+    {
+        cout &lt;&lt; "Failed to open " &lt;&lt; INPUT_FILE_NAME &lt;&lt; endl;
+        return -1;
+    }
+
+    vector&lt;Book&gt; catalog;  // book catalog
+    
+                     //Object to store attributes
+    string temp;
+    string delete_book;
+    int index=0;
+    char command;
+     int i, j;
+     string key;
+    int count=0;
+    while(!input.eof())
+    { Book b1;
+      input &gt;&gt; command;  // read the first command
+    if(command=='+')
+    {
+     
+      input&gt;&gt;b1;
+      catalog.insert(catalog.begin() + count, b1) ;
+      string isbn=b1.get_isbn();
+         for (i = 1; i &lt;= catalog.size(); i++)
+         {
+            key = catalog[i].get_isbn();
+            j = i-1;
+ 
+         
+         while (j &gt;= 0 &amp;&amp; catalog[j].get_isbn() &gt; key)
+         {
+            catalog[j+1].get_isbn() = catalog[j].get_isbn();
+            j = j-1;
+          }
+          
+          catalog[j+1].get_isbn() = key;
+         }
+    }
+    else if(command=='-')
+    {
+       string isbn=b1.get_isbn();
+      	if (catalog.size() == 0) {
+	} 
+	else {
+		for (int position = 0; position &lt; catalog.size(); position++) {
+			if (catalog[position].get_isbn() == isbn) {
+				cout &lt;&lt; endl &lt;&lt; "- Removed " &lt;&lt; catalog[position];
+				catalog.erase(catalog.begin() + position);
+				return position;
+			}
+		}
+	}
+	cout &lt;&lt; "" &lt;&lt; endl;
+    }
+    else if(command=='?')
+    {
+       string check;
+       getline(input,check);
+    
+       string isbn="";
+       string author="";
+       string category="";
+       int index_isbn=0;
+       int index_author=0;
+       int index_category=0;
+       
+       if(check==" author"){
+          
+          getline(input,author,'\n');
+          searchAuthor(author,catalog);
+          
+       }else if(check==" category"){
+          
+          getline(input,category,'\n');
+          searchCategory(category,catalog);
+          
+       }else if(check==" isbn"){
+          
+          getline(input,isbn,'\n');
+          index_isbn=find(isbn,catalog);
+          cout&lt;&lt;catalog[index_isbn];
+          
+       }else{
+          
+          for(int i=0; i&lt;catalog.size(); i++){
+             
+             cout&lt;&lt;catalog[i];
+             
+          }
+          
+       }
+    }
+    else
+    {
+      cout&lt;&lt;"Invalid Command"&lt;&lt;endl;   
+    }
+    }
+    /**
+     * Loop to read commands until the end of file.
+     */
+    while (!input.fail())
+    {
+        cout &lt;&lt; endl &lt;&lt; command &lt;&lt; " ";
+
+        /*** Complete this main. *****/
+    }
+
+    return 0;
+}
+
+int find( string isbn1,  vector&lt;Book&gt;&amp; catalog)
+{
+   int high=catalog.size()-1;
+   int low=0;
+   int mid=0;
+   
+   while(high&gt;low)
+   {
+      
+      mid=(high+low)/2;
+      if(isbn1&gt;catalog[mid].get_isbn()){
+         low=mid+1;
+      }else if(isbn1&lt;catalog[mid].get_isbn()){
+         high=mid-1;
+      }else if(isbn1==catalog[mid].get_isbn()){
+         return mid;
+      }
+   
+      return -1;
+   }
+}
+void searchAuthor(const string author,const vector&lt;Book&gt;&amp; catalog)
+{
+   int i=0;
+   int count=0;
+   while(i&lt;catalog.size())
+     {
+        if(author==catalog[i].get_last())
+        {
+           cout&lt;&lt;catalog[i];
+           count++;
+        }
+        i++;
+     }
+   if(count==0){
+      cout&lt;&lt;"No book found with this author!";
+   }
+}
+void searchCategory(const string category,const vector&lt;Book&gt;&amp; catalog)
+{
+   int i=0;
+   while(i&lt;catalog.size())
+     {
+        if(category==catalog[i].get_category();
+        {
+           cout&lt;&lt;catalog[i];
+           count++;
+        }
+        i++;
+     }
+   if(count==0){
+      cout&lt;&lt;"No book found with this category!";
+   }
+}
+   
+</pre>
+</div>
+<p class="header providedFiles">Provided files</p>
+<div class="providedFiles">
+<p class="caption">commands.in:</p>
+<pre>+ 978-0130460417,Mak,Ronald,Java Number Cruncher,technical
++ 978-1501163401,King,Stephen,Sleeping Beauties,fiction
++ 978-0470383285,Horstmann,Cay,Big C++,technical
++ 978-0470177075,Mak,Ronald,Writing Compilers,technical
++ 978-0471744870,Horstmann,Cay,Object-Oriented Design,technical
++ 978-1439156810,King,Stephen,On Writing - A Memoir of the Craft,history
+?
+? author=Mak
+? category=technical
+? category=fiction
+? isbn=978-0470383285
++ 978-0470177075,Mak,Ronald,Writing Compilers,technical
+? category=history
+? author=King
+? isbn=978-0470385285
+? author=Horstmann
+- 978-0130460417
+$ 978-1439156810
+- 978-0471744870
+- 978-1439156811
+?
+</pre>
+</div>
+<p class="header score">Score</p>
+<div class="score">
+<p class="score">0</p>
+</div>
+<div class="footnotes"><div class="footnote">2018-03-09T01:27:44Z</div>
+</div>
+</body></html>

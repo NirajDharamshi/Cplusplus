@@ -1,0 +1,16 @@
+Expression? 42 =
+42
+Expression? 2*(42 - 42e-1)=
+75.6
+Expression? 12/(5.5*(17 + 0.00314E+3)) =
+0.108333
+Expression?  12/(5.5*(17 + 0.00314E+3) =
+*** Missing )
+Expression? 5/(6 - 2*3) =
+*** Division by zero*** Missing )
+Expression? .
+Done!
+
+--------------------------------
+Process exited after 96.05 seconds with return value 1
+Press any key to continue . . .

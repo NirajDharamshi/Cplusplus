@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="Submission" content="/tmp/codecheck/18030104375459405263735079173"/>
+<meta name="Level" content="1"/>
+<meta name="Time" content="2018-03-01T04:37:06Z"/>
+<meta name="ID" content="RomanNumeral"/>
+<meta name="User" content="1802180320715ac3brrhmwrycauydaa8jtx"/>
+<meta name="Problem" content="ext/17091917124r0yck5moj6w8j7rckda27s98"/>
+<meta name="Elapsed" content="2831 ms"/>
+<style type="text/css">
+.header {font-weight: bold; font-size: 1.2em; }
+.item {font-weight: bold;}
+.pass {color: green;}
+.fail {color: red;}
+.note {color: blue; font-weight: bold;}
+table.file td {padding-right: 1em; background: #FFF; }
+.linenumber {color: gray;}
+.footnote {font-size: 0.7em;}
+table {font-size: 0.9em;}
+td, th { background: #EEE; margin: 0.5em; padding: 0.25em;}
+table.output td {vertical-align: top;}
+div.footnotes { border-top: 1px solid gray; padding-top: 0.5em; }
+</style>
+<title>Report</title>
+</head>
+<body>
+<p class="header run">Testing RomanNumeralTests.cpp</p>
+<div class="run">
+<pre class="output">
+</pre>
+<pre class="output">Test 1
+
+r1 = [53:LIII]
+r2 = [1949:MCMXLIX]
+r3 = [34:XXXIV]
+r4 = [1949:MCMXLIX]
+result = r1 + r2/r3 = [53:LIII] + [1949:MCMXLIX] / [34:XXXIV] = [110:CX]
+
+[1949:MCMXLIX] and [1949:MCMXLIX] are equal.
+[53:LIII] and [34:XXXIV] are unequal.
+
+Test 2
+
+[1963:MCMLXIII] + [53:LIII] = [2016:MMXVI]
+[2001:MMI] - [33:XXXIII] = [1968:MCMLXVIII]
+[53:LIII] * [33:XXXIII] = [1749:MDCCXLIX]
+[2001:MMI] / [33:XXXIII] = [60:LX]
+</pre>
+<span class="pass">pass </span></div>
+<p class="header studentFiles">Student files</p>
+<div class="studentFiles">
+<p class="caption">RomanNumeral.cpp:</p>
+<pre>#include"RomanNumeral.h"
+#include&lt;string&gt;
+#include&lt;cmath&gt;
+#include&lt;iostream&gt;
+using namespace std;
+
+//Constructor with no arguments
+RomanNumeral::RomanNumeral ()
+{
+
+}
+//Constructor with string argument
+RomanNumeral::RomanNumeral (string x):decimal (0), roman (x)
+{
+  decimal = to_dec (x);
+}
+//Constructor with integer argument 
+RomanNumeral::RomanNumeral (int y):decimal (y),roman ("")
+{
+
+  roman = to_rom (y);
+}
+
+//Getter functions
+
+int RomanNumeral::get_dec () const 
+{
+  return decimal;
+}
+
+string RomanNumeral::get_rom () const 
+{
+  return roman;
+}
+
+//Function to convert roman number to decimal number
+int RomanNumeral::to_dec (string rom)
+{
+  int len;
+  int sum = 0;
+  int now = 0;
+  int prev = 1000;
+
+  len = rom.length ();
+  for (int j = 0; j &lt; len; j++)
+    {
+      switch (rom[j])
+	{
+	case 'M':
+	  {
+	    now = 1000;
+	    break;
+	  }
+	case 'D':
+	  {
+	    now = 500;
+	    break;
+	  }
+	case 'C':
+	  {
+	    now = 100;
+	    break;
+	  }
+	case 'L':
+	  {
+	    now = 50;
+	    break;
+	  }
+	case 'X':
+	  {
+	    now = 10;
+	    break;
+	  }
+	case 'V':
+	  {
+	    now = 5;
+	    break;
+	  }
+	case 'I':
+	  {
+	    now = 1;
+	    break;
+	  }
+
+	}
+
+      if (rom[j + 1] != '\0')
+	{
+	  if (rom[j + 1] == 'M')
+	    {
+	      prev = 1000;
+	    }
+	  if (rom[j + 1] == 'D')
+	    {
+	      prev = 500;
+	    }
+	  if (rom[j + 1] == 'C')
+	    {
+	      prev = 100;
+	    }
+	  if (rom[j + 1] == 'L')
+	    {
+	      prev = 50;
+	    }
+	  if (rom[j + 1] == 'X')
+	    {
+	      prev = 10;
+	    }
+	  if (rom[j + 1] == 'V')
+	    {
+	      prev = 5;
+	    }
+	  if (rom[j + 1] == 'I')
+	    {
+	      prev = 1;
+	    }
+
+	  if (prev &gt; now)
+	    {
+	      sum = sum + prev - now;
+	      j++;
+	    }
+	  else
+	    {
+	      sum = sum + now;
+	    }
+	}
+      else
+	{
+	  sum = sum + now;
+	}
+
+
+
+
+    }
+
+
+
+
+  return sum;
+
+}
+
+//Function to convert decimal number to roman number
+string RomanNumeral::to_rom (int decimal)
+{
+  string rom;
+  string M[] = { "", "M", "MM", "MMM" };
+  string C[] = { "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" };
+  string X[] = { "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" };
+  string I[] = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
+
+  rom =
+    M[decimal / 1000] + C[(decimal % 1000) / 100] + X[(decimal % 100) / 10] +
+    I[decimal % 10];
+
+  return rom;
+}
+//Output(COUT) operator overloading
+ostream &amp; operator &lt;&lt; (ostream &amp; out, const RomanNumeral &amp; r)
+{
+
+
+
+  out &lt;&lt; "[" &lt;&lt; r.decimal &lt;&lt; ":" &lt;&lt; r.roman &lt;&lt; "]";
+
+  return out;
+
+}
+//Input(CIN) operator overloading
+istream &amp; operator &gt;&gt; (istream &amp; in, RomanNumeral &amp; r)
+{
+
+
+
+  in &gt;&gt; r.roman;
+  r.decimal=r.to_dec(r.roman);
+
+  return in;
+
+}
+//Addition operator overloading
+int operator + (const RomanNumeral &amp; r, const RomanNumeral &amp; r1)
+{
+  return r.decimal + r1.decimal;
+}
+
+//Subtraction operator overloading
+int operator - (const RomanNumeral &amp; r, const RomanNumeral &amp; r1)
+{
+  return r.decimal - r1.decimal;
+}
+//Multiplication operator overloading
+int operator * (const RomanNumeral &amp; r, const RomanNumeral &amp; r1)
+{
+  return (r.decimal) * (r1.decimal);
+}
+//Division operator overloading
+int operator / (const RomanNumeral &amp; r, const RomanNumeral &amp; r1)
+{
+  return (r.decimal) / (r1.decimal);
+}
+
+//Equality comparison opeerator overloading
+bool operator == (const RomanNumeral &amp; r, const RomanNumeral &amp; r1)
+{
+  return (r.decimal) == (r1.decimal);
+}
+
+//not equal operator overloading
+bool operator != (const RomanNumeral &amp; r, const RomanNumeral &amp; r1)
+{
+  return (r.decimal) != (r1.decimal);
+}
+</pre>
+<p class="caption">RomanNumeral.h:</p>
+<pre>#ifndef ROMANNUMERAL_H_
+#define ROMANNUMERAL_H_
+#include&lt;string&gt;
+#include&lt;iostream&gt;
+
+using namespace std;
+
+class RomanNumeral
+{
+public:
+  //Constructor declaration
+  RomanNumeral (int decimal);
+    RomanNumeral (string r);
+    RomanNumeral ();
+  //Getter function declaration
+  int get_dec () const;
+  string get_rom () const;
+  //Operator overloading function declaration
+  friend ostream &amp; operator &lt;&lt; (ostream &amp; out, const RomanNumeral &amp; r);
+  friend istream &amp; operator &gt;&gt; (istream &amp; in, RomanNumeral &amp; r);
+  friend int operator + (const RomanNumeral &amp; r, const RomanNumeral &amp; r1);
+  friend int operator - (const RomanNumeral &amp; r, const RomanNumeral &amp; r1);
+  friend int operator / (const RomanNumeral &amp; r, const RomanNumeral &amp; r1);
+  friend int operator * (const RomanNumeral &amp; r, const RomanNumeral &amp; r1);
+  friend bool operator == (const RomanNumeral &amp; r, const RomanNumeral &amp; r1);
+  friend bool operator != (const RomanNumeral &amp; r, const RomanNumeral &amp; r1);
+
+
+  //private members 
+private:
+  int decimal;
+  string roman;
+  int to_dec (string p);
+  string to_rom (int q);
+};
+
+
+#endif
+</pre>
+</div>
+<p class="header providedFiles">Provided files</p>
+<div class="providedFiles">
+<p class="caption">RomanNumeral.txt:</p>
+<pre>MCMLXIII + LIII
+MMI - XXXIII
+LIII * XXXIII
+MMI / XXXIII
+</pre>
+<p class="caption">RomanNumeralTests.cpp:</p>
+<pre>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include "RomanNumeral.h"
+
+using namespace std;
+
+const string INPUT_FILE_NAME = "RomanNumeral.txt";
+
+void test1();
+void test2(ifstream&amp; in);
+
+/**
+ * Main. Run the two tests.
+ */
+int main()
+{
+    test1();
+
+    ifstream in;
+    in.open(INPUT_FILE_NAME);
+    if (in.fail())
+    {
+        cout &lt;&lt; "Input file open failed: " &lt;&lt; INPUT_FILE_NAME;
+        return -1;
+    }
+
+    test2(in);
+    return 0;
+}
+
+/**
+ * A test with some predefined Roman numerals
+ * and an arithmetic and a relational expression.
+ */
+void test1()
+{
+    cout &lt;&lt; "Test 1" &lt;&lt; endl &lt;&lt; endl;
+
+    RomanNumeral r1(53);
+    RomanNumeral r2("MCMXLIX");
+    RomanNumeral r3("XXXIV");
+    RomanNumeral r4(1949);
+
+    cout &lt;&lt; "r1 = " &lt;&lt; r1 &lt;&lt; endl;
+    cout &lt;&lt; "r2 = " &lt;&lt; r2 &lt;&lt; endl;
+    cout &lt;&lt; "r3 = " &lt;&lt; r3 &lt;&lt; endl;
+    cout &lt;&lt; "r4 = " &lt;&lt; r4 &lt;&lt; endl;
+
+    RomanNumeral result = r1 + r2/r3;
+    cout &lt;&lt; "result = r1 + r2/r3 = "
+         &lt;&lt; r1 &lt;&lt; " + " &lt;&lt; r2 &lt;&lt; " / " &lt;&lt; r3
+         &lt;&lt; " = " &lt;&lt; result &lt;&lt; endl;
+
+    cout &lt;&lt; endl;
+
+    if (r2 == r4)
+    {
+        cout &lt;&lt; r2 &lt;&lt; " and " &lt;&lt; r4 &lt;&lt; " are equal." &lt;&lt; endl;
+    }
+    else
+    {
+        cout &lt;&lt; r2 &lt;&lt; " and " &lt;&lt; r4 &lt;&lt; " are unequal." &lt;&lt; endl;
+    }
+
+    if (r1 == r3)
+    {
+        cout &lt;&lt; r1 &lt;&lt; " and " &lt;&lt; r3 &lt;&lt; " are equal." &lt;&lt; endl;
+    }
+    else
+    {
+        cout &lt;&lt; r1 &lt;&lt; " and " &lt;&lt; r3 &lt;&lt; " are unequal." &lt;&lt; endl;
+    }
+}
+
+/**
+ * A test that reads, parses, and executes
+ * arithmetic expressions with Roman numerals.
+ * @param in the input stream
+ */
+void test2(ifstream&amp; in)
+{
+    cout &lt;&lt; endl;
+    cout &lt;&lt; "Test 2" &lt;&lt; endl &lt;&lt; endl;
+
+    // Read and process each expression, one per line,
+    // each in the form    r1 op r2
+    // where r1 and r2 are the two Roman numeral operands,
+    // and arithmetic operator op is either + - * or /
+    RomanNumeral r1;
+    while (in &gt;&gt; r1)     // read r1
+    {
+        RomanNumeral r2, result;
+        char op;
+        in &gt;&gt; op &gt;&gt; r2;  // read op and r2
+
+        switch (op)
+        {
+            case '+':
+                result = r1 + r2;
+                break;
+
+            case '-':
+                result = r1 - r2;
+                break;
+
+            case '*':
+                result = r1*r2;
+                break;
+
+            case '/':
+                result = r1/r2;
+                break;
+        }
+
+        // Output the operands, the operator, and the result.
+        cout &lt;&lt; r1 &lt;&lt; " " &lt;&lt; op &lt;&lt; " " &lt;&lt; r2
+             &lt;&lt; " = " &lt;&lt; result &lt;&lt; endl;
+    }
+}
+
+</pre>
+</div>
+<p class="header score">Score</p>
+<div class="score">
+<p class="score">1/1</p>
+</div>
+<div class="footnotes"><div class="footnote">2018-03-01T04:37:06Z</div>
+</div>
+</body></html>
